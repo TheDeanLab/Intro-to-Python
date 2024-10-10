@@ -80,3 +80,13 @@ layout: center
 # Why are you interested in Python?
 
 </v-click>
+
+---
+layout: center
+---
+
+# Activity 1
+
+## Install Anaconda
+
+www.anaconda.com/download/
