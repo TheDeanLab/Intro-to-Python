@@ -1,5 +1,10 @@
+---
+layout: center
+---
 
 # Dependency Management and Environment Requirements
+## Clean, Reproducible Code 
+
 
 ---
 layout: image-right
@@ -15,11 +20,6 @@ backgroundSize: contain
 - An environment is like a tissue culture flask. 
 - It insures that the software in one project doesn't interfere with another. 
 - This enables a stable and reproducible space for your code.
-
-
-
-
-
 
 ---
 
