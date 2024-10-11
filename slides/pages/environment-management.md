@@ -13,18 +13,18 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Creating Reproducible Development Environments**
+Creating Reproducible Development Environments
 
 ** **
 
 - An environment is like a tissue culture flask. 
-- It insures that the software in one project doesn't interfere with another. 
+- It guarantees that the software in one project doesn't interfere with another. 
 - This enables a stable and reproducible space for your code.
 
 ---
 
 # Environment Management with Anaconda
-**Why Does it Matter?**
+Why Does it Matter?
 
 ** **
 
@@ -49,7 +49,7 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Why Does it Matter?**
+Why Does it Matter?
 
 ** **
 <v-click>
@@ -68,7 +68,7 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Miniconda vs Anaconda**
+Miniconda vs Anaconda
 ** **
 <v-click>
 
@@ -87,7 +87,7 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**What is a Package?**
+What is a Package?
 ** **
 
 <v-click>
@@ -115,14 +115,15 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Creating a New Environment**
+Creating a New Environment
+
 ** **
 
 <v-click>
 
 **Create a new environment.**
 
-```
+```bash
 conda create --name EnvironmentName
 ```
 
@@ -132,7 +133,7 @@ conda create --name EnvironmentName
 
 **Create a new environment with specific Python version**
 
-```
+```bash
 conda create --name EnvironmentName python=3.10
 ```
 
@@ -142,13 +143,12 @@ conda create --name EnvironmentName python=3.10
 
 **Create a new environment from a YAML or text file.**
 
-```
+```bash
 conda create --name EnvironmentName file=package_contents.yml
+conda create --name EnvironmentName file=package_contents.txt
 ```
 
 </v-click>
-
-
 
 ---
 layout: image-right
@@ -157,7 +157,47 @@ backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Working with Environments**
+Creating New Environments from Text Files
+
+** **
+
+Each package, and all of its dependencies, explicitly imported from a package manager (pip, conda, etc.)
+
+**Provides:**
+- Version Control (e.g., pyserial==3.5)
+- Platform Control (e.g., sys_platform == “darwin”)
+
+
+---
+layout: image-right
+image: /images/conda_env_list.png
+backgroundSize: contain
+---
+
+# Environment Management with Anaconda
+Working with Environments
+** **
+
+**List all environments.**
+
+```
+conda env list
+```
+
+**Activate an environment**
+
+```
+conda activate EnvironmentName
+```
+
+---
+layout: image-right
+image: /images/conda_list.png
+backgroundSize: contain
+---
+
+# Environment Management with Anaconda
+Working with Environments
 ** **
 
 **List all environments.**
@@ -178,21 +218,88 @@ conda activate EnvironmentName
 conda list
 ```
 
-
----
-layout: image-right
-# image: /images/environments2.png
-backgroundSize: contain
 ---
 
 # Environment Management with Anaconda
-**Creating New Environments from Text Files**
+Working with Environments
 ** **
 
-Each package, and all of its dependencies, explicitly imported from a package manager (pip, conda, etc.)*
-Version Control 
-(e.g., pyserial==3.5)
-Platform Control
-(e.g., sys_platform == “darwin”)
+**Important:**
+- Do not mix package managers (e.g., conda and pip).
+- Be judicious and explicit with your dependencies.
 
+---
+layout: center
+---
 
+# Activity
+Create a Python Environment and Install Packages
+
+---
+
+# Activity: Create a Python Environment and Install Packages
+Create a Python Environment and Install Packages
+
+### Objective:
+- Create a new environment with a specific Python version.
+- Activate the environment.
+- Install dependencies from a text file.
+
+---
+
+# Activity: Create a Python Environment and Install Packages
+Create a Python Environment and Install Packages
+
+### Steps:
+
+1. **Create a New Environment with Python 3.9:**
+    - Open your terminal or command prompt.
+    - Run the following command to create a new environment with Python 3.9:
+      ```bash
+      conda create --name myenv python=3.9
+      ```
+
+2. **Activate the New Environment:**
+    - Once the environment is created, activate it using the following command:
+      ```bash
+      conda activate myenv
+      ```
+
+---
+
+# Activity: Create a Python Environment and Install Packages
+Create a Python Environment and Install Packages
+
+3. **Create a `requirements.txt` File:**
+    - In your working directory, create a new text file called `requirements.txt`.
+    - Add a few packages to the file, for example:
+      ```
+      numpy
+      pandas
+      matplotlib
+      ```
+
+4. **Install Packages from the `requirements.txt` File:**
+    - Use the following command to install the packages listed in the `requirements.txt` file:
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+---
+
+# Activity: Create a Python Environment and Install Packages
+Create a Python Environment and Install Packages
+
+5. **Verify the Installation:**
+    - After installation, verify that the packages were installed correctly by running:
+      ```bash
+      conda list
+      ```
+
+6. **Import Dependencies and Execute Logic:**
+    - Create a Python script called `plot_image.py`.
+    - Import numpy and matplotlib.
+    - Create a random 2D matrix that is 512 x 512 pixels.
+    - Plot the original image.
+    - Manipulate the image (e.g., taket he inverse).
+    - Plot the manipulated image.

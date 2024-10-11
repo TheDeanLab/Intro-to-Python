@@ -85,7 +85,10 @@ layout: center
 layout: center
 ---
 
-# Activity 1
+** **
+
+
+# Activity
 
 ## Install Anaconda
 

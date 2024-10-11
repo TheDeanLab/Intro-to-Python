@@ -9,8 +9,11 @@ layout: center
 ---
 
 # Practical Tools for Running Python Software
+Command Line Execution
 
-**Command Line Execution** 
+** **
+
+
 
 Using `python script.py` or running the Python interpreter directly from the terminal.
 
@@ -28,8 +31,9 @@ Using `python script.py` or running the Python interpreter directly from the ter
 ---
 
 # Practical Tools for Running Python Software
+Command Line Execution
 
-**Command Line Execution** 
+** **
 
 - **Step 3: Create a Simple Python Script.**  
 
@@ -49,8 +53,9 @@ Using `python script.py` or running the Python interpreter directly from the ter
 ---
 
 # Practical Tools for Running Python Software
+Command Line Executation
 
-**Command Line Executation**
+** **
 
   - **Advantages:**
     - Simple and quick for running standalone scripts.
@@ -65,8 +70,9 @@ Using `python script.py` or running the Python interpreter directly from the ter
 ---
 
 # Practical Tools for Running Python Software
+Interactive Mode
 
-**Interactive Mode**
+** ** 
 
 Entering the Python interpreter by typing `python` in the terminal and running code line-by-line interactively.
 
@@ -75,14 +81,13 @@ Entering the Python interpreter by typing `python` in the terminal and running c
     - macOS/Linux: Open Terminal.
 
 - **Step 2: Start the Python Interpreter.**  
-
     Enter the following command to start the interactive mode:
     ```
     python
     ```
 
     - Once in the interactive mode, your terminal will output information on the `Python` installation.
-        ```
+        ```bash
         Last login: Thu Oct 10 08:44:41 on ttys000
         (base) S155475@SW567797 slides % python
         Python 3.9.12 (main, Apr  5 2022, 01:52:34) 
@@ -93,8 +98,9 @@ Entering the Python interpreter by typing `python` in the terminal and running c
 ---
 
 # Practical Tools for Running Python Software
+Interactive Mode
 
-**Interactive Mode**
+** **
 
 Entering the Python interpreter by typing `python` in the terminal and running code line-by-line interactively.
 
@@ -126,9 +132,9 @@ Entering the Python interpreter by typing `python` in the terminal and running c
 ---
 
 # Practical Tools for Running Python Software
+Interactive Mode
 
-**Interactive Mode**
-
+** **
   - **Advantages:**
     - Immediate feedback; great for testing small snippets of code.
     - Excellent for learning and experimentation.
@@ -142,9 +148,9 @@ Entering the Python interpreter by typing `python` in the terminal and running c
 ---
 
 # Practical Tools for Running Python Software
+JupyterLab Notebooks
 
-**JupyterLab Notebooks**
-
+** **
 A web-based interactive development environment for writing and executing Python code.
 
 - **Step 1: If necessasry, install JupyterLab with pip.**
@@ -168,9 +174,9 @@ A web-based interactive development environment for writing and executing Python
 ---
 
 # Practical Tools for Running Python Software
+JupyterLab Notebooks
 
-**JupyterLab Notebooks**
-
+** **
 - **Step 4: Run Code in Cells.** 
 
     In a Jupyter notebook, code is written in cells. Type the following in the first cell:
@@ -186,8 +192,9 @@ A web-based interactive development environment for writing and executing Python
 ---
 
 # Practical Tools for Running Python Software
+JupyterLab Notebooks
 
-**JupyterLab Notebooks**
+** **
 
   - **Advantages:**
     - Interactive environment perfect for data science, research, and documentation.
@@ -202,8 +209,9 @@ A web-based interactive development environment for writing and executing Python
 ---
 
 # Practical Tools for Running Python Software
+Spyder IDE
 
-**Spyder IDE**
+** **
 
 An integrated development environment (IDE) specifically tailored for scientific computing with Python.
 
@@ -224,8 +232,9 @@ An integrated development environment (IDE) specifically tailored for scientific
 ---
 
 # Practical Tools for Running Python Software
+Spyder IDE
 
-**Spyder IDE**
+** **
 
 An integrated development environment (IDE) specifically tailored for scientific computing with Python.
 
@@ -249,8 +258,9 @@ An integrated development environment (IDE) specifically tailored for scientific
 ---
 
 # Practical Tools for Running Python Software
+Spyder IDE
 
-**Spyder IDE**
+** **
 
 - **Advantages:**
   - **Integrated Development Environment:** Includes an interactive Python console, variable explorer, and script editor in a single interface.
@@ -261,44 +271,3 @@ An integrated development environment (IDE) specifically tailored for scientific
   - **Not Ideal for Large Projects:** While great for small to medium scripts, Spyder might not be the best choice for managing large-scale software projects.
   - **Less Customizable:** Compared to IDEs like VS Code or PyCharm, Spyder is less customizable.
 
-
----
-layout: center
----
-
-# Practical Tools for Running Python Software
-## One more thing... 
-
----
-
-# Understanding `if __name__ == "__main__"`
-
-- **What is `__name__`?**
-  - In Python, `__name__` is a special built-in variable that represents the name of the current module.
-  - When a Python file is run directly, `__name__` is set to `"__main__"`. However, when a file is imported as a module, `__name__` is set to the module's name instead.
-
-- **Why use `if __name__ == "__main__":`?**
-  - This statement ensures that a block of code is only executed when the script is run directly, not when it’s imported as a module in another script.
-  - It is commonly used to encapsulate the "entry point" of a Python script.
-
----
-
-# Understanding `if __name__ == "__main__"`
-
-- **Example:**
-    ```python
-    # myscript.py
-    def main():
-        print(5+5)
-        
-    if __name__ == "__main__":
-        main()
-    ```
-
-- **Behavior:**
-  - **When run directly:** The `main()` function will execute.
-  - **When imported by another file:** The `main()` function will not automatically execute. 
-
-
-**Key Benefit:** 
-- It allows for reusable code by preventing specific parts of a script from running when the script is imported as a module elsewhere.
