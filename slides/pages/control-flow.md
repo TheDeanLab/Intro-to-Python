@@ -298,10 +298,20 @@ For and While
 
 
 ---
+layout: image-right
+image: /images/continue_break_pass_illustrate.png
+backgroundSize: contain
+---
 
 # Iteration (Loops) Control
 Controlling loop execution
 
 ** **
-- Looping over every item is a slow process. We may want to only operate on certain items, skipping or terminating early
-- Python offers 3 control statements:
+- We can customize the loop to only operate on certain items, skipping or terminating early
+- 3 control statements can be used to do this:
+  - **Continue**:
+    - go direct to next item
+  - **Break**:
+    - jump out of loop
+  - **Pass**:
+    - skip code, continue to remainder
