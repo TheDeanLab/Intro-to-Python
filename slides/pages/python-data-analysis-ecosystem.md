@@ -200,10 +200,7 @@ You will almost always use these !
 import numpy as np 
 import pandas as pd
 
-# generate two arrays of random numbers
-x = np.random.normal(0,1,100)
-y = np.random.uniform(0,1,100)
-# stack them into a matrix that is table-like
+# stack the two random number arrays into a matrix
 tab_xy = np.vstack([x,y]).T 
 
 # convert to pandas table
@@ -213,6 +210,8 @@ pandas_tab_xy.to_csv('my_table.csv', index=None) # index=None means we don't get
 # convert to numpy 
 numpy_tab_xy = pandas_tab_xy.values; columns_tab_xy = pandas_tab_xy.columns
 
+# read in a .csv as a pandas DataFrame if you have one
+table = pd.read_csv('my_table.csv')
 ```
 </v-click>
 
@@ -224,7 +223,24 @@ You will almost always use these !
 	+ Main easy-to-use image processing library with examples (common operations). 
 	+ Slow, particularly 3D. Limited 3D image analysis.
 	+ Definitely not complete! Start here, Google/chatGPT for more specific, advanced uses
-	+ for Bioimaging Analysis, checkout this [book](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/intro.html)
+	+ for Bioimaging Analysis, checkout this [book](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/intro.html). See [bio-formats](https://docs.openmicroscopy.org/bio-formats/6.8.0/developers/python-dev.html) for more general handling of microscopy image formats
+
+<v-click>
+
+```python
+import skimage.io as skio
+import skimage.transform as sktform
+import pylab as plt 
+# read common image formats e.g. .png, .tif, .jpg. For .nd2 (install nd2), .czi (install czifile)
+img = skio.imread('my_image.tif')
+# save image
+skio.imsave('my_saved_image.tif', img)
+# resize image by linear interpolation
+img_resize = sktform.resize(img, output_shape=(256,256), order=1, preserve_range=True) 
+# view image, figsize controls resoluton on-screen
+plt.figure(figsize=(10,10)); plt.imshow(img_resize, cmap='gray'); plt.show()
+```
+</v-click>
 
 
 ---
@@ -232,34 +248,138 @@ You will almost always use these !
 # Essential libraries - 'The Scientific Stack'
 You will almost always use these !
 - [**scikit-learn**](https://scikit-learn.org/1.5/auto_examples/index.html)
+	- Simplest library for machine learning. Every function has the same way of using. 
+	- Contains useful data preprocessing routines, and toy datasets
+	- Primarily, a tour of classical machine learning techniques, which deliver very good performance and further improved with parameter tuning using `auto-sklearn` [library](https://automl.github.io/auto-sklearn/master/)
 
+<v-click>
+
+```python
+from sklearn import datasets
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+import pylab as plt 
+
+iris = datasets.load_iris() # load iris dataset, this has 3 features/dimensions
+iris_sdscale = StandardScaler().fit_transform(iris.data) # standard scale each feature to be mean=0, std=1
+pca_iris_sdscale = PCA(n_components=2).fit_transform(iris_sdscale) # use PCA to map to 2 dimensions to plot
+# plot, and color points by the 3 iris types, and choose a colormap
+plt.figure(figsize=(8,8)) 
+plt.scatter(pca_iris_sdscale[:,0], pca_iris_sdscale[:,1], c=iris.target, colormap='Spectral')
+plt.show()
+```
+</v-click>
 
 ---
 
 # Installing libraries
 
+- All these libraries can be installed together using `conda` or `pip`. 
+	- `conda`:
+		```python
+		conda install numpy scipy matplotlib pandas scikit-image scikit-learn 
+		```
+	- `pip`:
+		```python
+		pip install numpy scipy matplotlib pandas scikit-image scikit-learn 
+		```
+
+<v-click>
+
+- Beware:
+	- Python packages may have complex and conflicting dependencies 
+		- e.g. PyQT (required by many GUIs)
+	- Python packages may require compilation if not pre-compiled for OS 
+	- Best practice:
+		- work in mainstream, stable Linux OS e.g. Ubuntu
+		- create new conda environment for each project
+		- install minimal set of libraries jointly upfront using e.g. `requirements.txt`
+</v-click>
 
 ---
 
-# How to get started with a new library?
-Browse example use cases, read documentation
+# 50% of time: File and folder manipulation
+
+<v-click>
+
+- **Real data is heterogeneous:** collected in different ways, different data formats
+</v-click>
+
+<v-click>
+
+- **Every user is different:** different file naming, different folder stuctures (and different between experiments)
+</v-click>
+
+<v-click>
+
+- **Operating systems are different:** different filepath convention
+	- Windows: r"C:\Work\Projects\Intro-to-Python-2024\slides"
+	- Windows: "C:\\\\Work\\\\Projects\\\\Intro-to-Python-2024\\\\slides"
+	- UNIX: "/home/Work/Projects/Intro-to-Python-2024/slides"
+</v-click>
+
+<v-click>
+
+- <ins>Most of the time</ins> is spent on locating the necessary files, reading and parsing them for the desired data in order to perform analysis:
+	- **First 50%** is finding and reading the right files in the right folders into data structures (Built-in Python libraries)
+	- **Second 50%** is writing code to extract the data in the right format to use for analysis (Day 1 + libraries)
+</v-click>
 
 
 ---
 
-# Locating a function's API documentation
-Locate example code snippets, then read function API documentation
+# 50% of time: File and folder manipulation
 
-
----
-
-# Beware: Libraries can have conflicting dependencies
-One conda environment for each new project
-
+`glob` library to find files and folders using a template (naming) pattern
 
 ---
 
-# NumPy: Efficient data structures and processing for data analysis
+# 50% of time: File and folder manipulation
+
+`os` library for operating system operations
+
+---
 
 
+# How to get started with a (new) library?
+Look for examples and demos, follow-up with function documentation
 
+<v-click>
+
+1. Libraries typically all come with example scripts. Make sure to run to:
+	- check library is correctly installed
+	- check function usage
+</v-click>
+
+<v-click>
+
+2. Some libraries have user guides and notebooks with detailed explanations, like a book
+	- read them to understand topics - these are way more useful than a paper!
+</v-click>
+
+<v-click>
+
+3. Check documentation of function for parameters, what format should the input be, what does it return
+	- In `spyder`, using `ctrl-left click` automatically takes you to a function's source code
+	- Access docstring with `help(function)` or online published function API references
+</v-click>
+
+<v-click>
+
+4. Ask in relevant online general- and topic- specific forums:
+	- [StackOverflow](https://stackoverflow.com/): general computing
+	- [image.sc](https://forum.image.sc/): scientific image analysis (biological mainly)
+	- ChatGPT / Gemini AI and Google search engines
+</v-click>
+
+<v-click>
+
+5. (Most important) Practice, read lots of code and documentation
+</v-click>
+
+---
+layout : center
+---
+
+# Activity
+Use libraries to do exploratory analysis of patient dataset
