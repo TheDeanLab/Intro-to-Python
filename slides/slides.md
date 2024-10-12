@@ -62,3 +62,16 @@ src: ./pages/environment-management.md
 hide: false
 ---
 
+
+
+---
+src: ./pages/python-data-analysis-ecosystem.md
+hide: false
+---
+
+
+
+---
+src: ./pages/data_visualization.md
+hide: false
+---
