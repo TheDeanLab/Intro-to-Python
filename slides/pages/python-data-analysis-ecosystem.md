@@ -327,19 +327,68 @@ plt.show()
 
 
 ---
+layout: image-right
+image: /images/glob_example.png
+backgroundSize: 60%
+---
 
 # 50% of time: File and folder manipulation
+`glob` library for file & folder search
 
-`glob` library to find files and folders using a template (naming) pattern
+- [`glob.glob`](https://docs.python.org/3/library/glob.html) enables finding files and folders matching a pattern. 
+- pattern is given by [regular expression](https://www.geeksforgeeks.org/write-regular-expressions/#) (regex) e.g. `*` denotes wildcard  
+<div class="flex flex-col items-center">
+  <div>
+    <img src="/images/glob_example_script.png" width="700" />
+  </div>
+</div>
+
+- `recursive=True` searches also subfolders
+- returns list of unordered file or folder paths 
+- use `sorted()` or `numpy.sort()` to sort
 
 ---
 
 # 50% of time: File and folder manipulation
+`os` library for operating system (OS) operations
 
-`os` library for operating system operations
+<v-click>
 
+- Get current working directory (`os.getcwd`) and change to new working directory (`os.chdir`)
+```python
+import os
+cwd = os.getcwd()
+os.chdir('/path/to/new/directory')
+```
+</v-click>
+
+<v-click>
+
+- Create a path from strings (`os.path.join`)
+```python
+os.path.join('prefix/path', 'middle/path', 'suffix/path')
+```
+</v-click>
+
+<v-click>
+
+- Creating a directory (`os.mkdir`) and all intermediate directories (`os.mkdirs`)
+```python
+os.mkdir('/path/to/new/directory')
+os.makedirs('/path/to/new/directory/with/intermediate/directories')
+```
+</v-click>
+
+
+<v-click>
+
+- Checking if path is a folder (`os.path.isdir`) or file (`os.path.isfile`)
+```python
+os.path.isdir('/path/to/directory')
+os.path.isfile('/path/to/file')
+```
+</v-click>
 ---
-
 
 # How to get started with a (new) library?
 Look for examples and demos, follow-up with function documentation
@@ -369,7 +418,7 @@ Look for examples and demos, follow-up with function documentation
 4. Ask in relevant online general- and topic- specific forums:
 	- [StackOverflow](https://stackoverflow.com/): general computing
 	- [image.sc](https://forum.image.sc/): scientific image analysis (biological mainly)
-	- ChatGPT / Gemini AI and Google search engines
+	- ChatGPT / Gemini AI and Google search engines (search online)
 </v-click>
 
 <v-click>
@@ -383,3 +432,5 @@ layout : center
 
 # Activity
 Use libraries to do exploratory analysis of patient dataset
+
+(go to Jupyter notebook XXX)
