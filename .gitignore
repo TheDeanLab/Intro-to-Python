@@ -7,3 +7,4 @@ __pycache__/
 *.DS_Store
 *.bak
 *.ipynb_checkpoints/
+datasets/covid-chestxray-dataset/*
