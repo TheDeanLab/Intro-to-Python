@@ -1,0 +1,9 @@
+*.idea/
+__pycache__/
+*.pyc
+*.egg-info
+*.egg
+*build/
+*.DS_Store
+*.bak
+*.ipynb_checkpoints/
