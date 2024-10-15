@@ -388,6 +388,8 @@ os.path.isdir('/path/to/directory')
 os.path.isfile('/path/to/file')
 ```
 </v-click>
+
+
 ---
 
 # How to get started with a (new) library?
@@ -426,6 +428,41 @@ Look for examples and demos, follow-up with function documentation
 5. (Most important) Practice, read lots of code and documentation
 </v-click>
 
+
+---
+
+# Essential Skill: debugging code
+There are only two types of error: 1) code syntax and 2) logic error
+
+I am getting errors, it doesn't seem to work - how do we detect and fix? Here are some essential tools and tips.
+
+<v-click>
+
+-  `print()`: 
+	- the simplest debugging tool, print your variables - are they what you expect?
+</v-click>
+
+<v-click>
+
+-  `assert()`: 
+	- do you have a variable that you know should be a particular value? Use `assert` which act like a brake, stopping the code when the condition is not met 
+</v-click>
+
+<v-click>
+
+-  `help()`: 
+	- everything in Python is an 'object'. you can use help() to anything to get more information, even the variables you create or assign! 
+</v-click>
+
+<v-click>
+
+-  **Plan your logic first:** what are the steps ? breakdown further to that you know how to do : 
+</v-click>
+
+<v-click>
+
+-  **Construct and solve a toy problem:** check usage of a function or method 
+</v-click>
 ---
 layout : center
 ---
