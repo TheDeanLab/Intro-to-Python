@@ -1,0 +1,1 @@
+covid x-ray dataset: open a terminal in this folder. Go to https://github.com/ieee8023/covid-chestxray-dataset?tab=readme-ov-file and git clone the repository into this folder. i.e. execute `git clone https://github.com/ieee8023/covid-chestxray-dataset.git` 

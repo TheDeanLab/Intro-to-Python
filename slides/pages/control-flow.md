@@ -298,10 +298,83 @@ For and While
 
 
 ---
+layout: image-right
+image: /images/continue_break_pass_illustrate.png
+backgroundSize: contain
+---
 
 # Iteration (Loops) Control
 Controlling loop execution
 
 ** **
-- Looping over every item is a slow process. We may want to only operate on certain items, skipping or terminating early
-- Python offers 3 control statements:
+- We can customize the loop to only operate on certain items, skipping or terminating early
+- 3 control statements can be used to do this:
+  - **Continue**:
+    - go direct to next item
+  - **Break**:
+    - jump out of loop
+  - **Pass**:
+    - skip code, continue to remainder
+
+
+---
+
+# Try-Except
+Code will fail!
+
+** **
+When code fails we can try to catch it and handle exceptions
+- ``try`` lets you test a block, returning an error if it fails
+- ``except`` catches the error and lets you handle it
+- ``else`` executes code when there is no error
+- ``finally`` lets you execute code, regardless of the result of try and except
+
+```python
+  try:
+    # Some Code
+  except:
+      # Executed if error occurred in the try block
+  else:
+      # execute if no exception
+  finally:
+      # Some code .....(always executed)
+```
+
+---
+
+# Try-Except
+Code will fail!
+
+** **
+## Example: a divide b function
+```python
+# Function to return a/b
+def AbyB(a , b):
+  try:
+      c = ((a+b) // (a-b))
+  except ZeroDivisionError:
+      print ("a/b result in 0")
+  else:
+      print (c)
+
+# Testing the above function
+AbyB(2.0, 3.0)
+AbyB(3.0, 3.0)
+```
+
+<v-click>
+
+## Output:
+```python
+-5.0
+a/b result in 0
+```
+</v-click>
+
+
+---
+layout: center
+---
+
+# Activity
+Write a loop to parse patient metadata and extract desired information
