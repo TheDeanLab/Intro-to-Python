@@ -42,6 +42,11 @@ hide: false
 ---
 
 
+---
+src: ./pages/data-structures.md
+hide: false
+---
+
 
 ---
 src: ./pages/control-flow.md
