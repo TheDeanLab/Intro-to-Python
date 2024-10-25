@@ -36,6 +36,14 @@ hide: false
 ---
 
 
+
+---
+src: ./pages/anaconda.md
+hide: true
+---
+
+
+
 ---
 src: ./pages/practical-tools.md
 hide: false
@@ -64,6 +72,12 @@ hide: false
 
 ---
 src: ./pages/environment-management.md
+hide: false
+---
+
+
+---
+src: ./pages/data-handling.md
 hide: false
 ---
 
