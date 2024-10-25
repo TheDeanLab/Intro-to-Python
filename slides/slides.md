@@ -94,3 +94,9 @@ hide: false
 src: ./pages/data_visualization.md
 hide: false
 ---
+
+
+---
+src: ./pages/scientific-computing.md
+hide: false
+---
