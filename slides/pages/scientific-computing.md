@@ -175,4 +175,178 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 
 ---
 
+# Loading Images
+
+- Numerous packages exist which can load images easily. Some common ones are:
+
+<table><tbody>
+<tr><td>Matplotlib</td>
+<td>
+
+```python
+import matplotlib.pyplot as plt
+im = plt.imread('img.png')
+```
+
+</td></tr>
+<tr><td>PIL</td>
+<td>
+
+```python
+from PIL import Image
+im = Image.open('img.png')
+```
+
+</td></tr>
+<tr><td>OpenCV</td>
+<td>
+
+```python
+from cv2
+im = cv2.imread('img.png')
+```
+
+</td></tr>
+<tr><td>Scikit-Image</td>
+<td>
+
+```python
+from skimage import io
+io.imread('img.png')
+```
+
+</td></tr>
+</tbody></table>
+
+--- 
+
 # Working with Images
+
+--- 
+
+# Statistical Analysis with ```SciPy```
+
+### T-Test for Independence
+
+- Let's use what we have learned to generate some toy data and perform a T-Test for independence.
+
+<table><tbody>
+
+<tr>
+<td>
+
+ ```python
+import numpy as np
+# --------- Generate three random samples ---------
+#                     sample   effect   variance
+#                     size     size
+v0 = np.random.normal(size=20, loc=0.0, scale=1.0)
+v1 = np.random.normal(size=20, loc=0.1, scale=1.0)
+v2 = np.random.normal(size=20, loc=1.0, scale=1.0)
+# plot the data
+import seaborn as sn
+sn.violinplot(data=[v0, v1, v2], inner='point')
+ ```
+
+</td>
+<td>
+
+<img src="../images/sci-comp_ttest_violin.png" width=256>
+Always <u>visualize your data</u>!
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ ```python
+import scipy.stats as spstats
+result_01 = spstats.ttest_ind(v0, v1)
+result_02 = spstats.ttest_ind(v0, v2)
+print(f"[0<->1]: P={result_01.pvalue:.4f}, t={result_01.statistic:.4f}")
+print(f"[0<->2]: P={result_02.pvalue:.4f}, t={result_02.statistic:.4f}")
+ ```
+
+</td>
+<td>
+
+T-Test Results:
+```console
+[0<->1]: P=0.2008, t=-1.3019
+[0<->2]: P=0.0065, t=-2.8815
+```
+
+</td>
+</tr>
+
+</tbody></table>
+
+---
+
+# Statistical Analysis with ```SciPy```
+
+### One-way ANOVA
+
+- <i>"Analysis of variance"</i> using the F-Statistic. Tests the null hypothesis that <u>all means are equal</u>.
+
+<table><tbody>
+
+<tr>
+<td>
+
+ ```python
+from scipy.stats import f_oneway
+
+# perform the one-way anova on our toy data
+result = f_oneway(v0, v1, v2) # include all
+
+print(f"ANOVA results:\nP = {result.pvalue:.4f}\nF = {result.statistic:.4f}")
+ ```
+
+</td>
+<td>
+
+```console
+ANOVA results:
+P = 0.0104
+F = 4.9470
+```
+
+</td>
+</tr>
+</tbody></table>
+
+- What happens to the ANOVA if we drastically reduce the "effect size (```loc```)" of ```v2``` from ```1.0``` to ```0.2```?
+
+<table><tbody>
+
+<tr>
+<td>
+
+ ```python
+v2 = np.random.normal(size=20, loc=0.2, scale=1.0)
+
+result = f_oneway(v0, v1, v2)
+
+print(f"ANOVA results:\nP = {result.pvalue:.4f}\nF = {result.statistic:.4f}")
+ ```
+
+</td>
+<td>
+
+```console
+ANOVA results:
+P = 0.3401
+F = 1.0993
+```
+
+</td>
+</tr>
+</tbody></table>
+
+- ```P > 0.05```: There is no significant difference between our datasets.
+
+---
+
+# Introduction to Machine Learning
