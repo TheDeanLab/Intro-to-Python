@@ -244,8 +244,8 @@ v0 = np.random.normal(size=20, loc=0.0, scale=1.0)
 v1 = np.random.normal(size=20, loc=0.1, scale=1.0)
 v2 = np.random.normal(size=20, loc=1.0, scale=1.0)
 # plot the data
-import seaborn as sn
-sn.violinplot(data=[v0, v1, v2], inner='point')
+import seaborn as sns
+sns.violinplot(data=[v0, v1, v2], inner='point')
  ```
 
 </td>
@@ -350,3 +350,34 @@ F = 1.0993
 ---
 
 # Introduction to Machine Learning
+
+--- 
+
+# Data Preparation
+
+- Features vs Targets
+
+- Classification vs Regression
+
+- One-hot encoding?
+
+- Train/Test/Validation split!
+
+--- 
+
+# Regression Models
+
+- Linear vs Non-linear
+
+- Overview of common ones:
+    - ElasticNet, Lasso, XGBoost
+
+--- 
+
+# Classification Models
+
+- Binary vs Multiclass
+
+- One-hot encoding
+
+- kNN, SVM, Random Forest
