@@ -328,10 +328,6 @@ graph TD
 </td>
 </tr></tbody></table>
 
---- 
-
-# Boolean Values
-
 ---
 
 # Built-in Data Structures
@@ -357,17 +353,18 @@ graph TD
 
 - Essentially Python's answer to what other languages call <u>arrays</u>.
 <br><br>
-#### Properties of ```list```:
-<table align="center"><thead><tr>
-<th>ordered</th>
-<th>mutable</th>
-<th>allow duplicates</th>
-</tr></thead></table>
-
+#### Properties of ```list```: <b>&emsp;ordered&emsp;mutable&emsp;allow duplicates</b>
+<br>
 - Create a list using square brackets, ```[ ]```:
 
 ```python
-   names = ["susan", "mike", "susan", "joe"] # here we use str, but can be any object!
+names = ["susan", "mike", "susan", "joe"] # here we use str, but can be any object!
+```
+
+- Or using the constructor directly with some other iterable data type:
+
+```python
+names = list(("susan", "mike", "susan", "joe")) # creating a list from a tuple
 ```
 
 - The items in a list are indexed, starting at 0. You can access items in a list by indexing, either relative to the start or the end:
@@ -399,29 +396,289 @@ graph TD
 <table><tbody><tr>
 <td>
 
- ```python
-   names[0] = "kevin"
-   print(names)
- ```
+```python
+names[0] = "kevin"
+```
 
 </td>
 <td>
 
- ```console
-   ['kevin', 'mike', 'susan', 'joe']
- ```
+```console
+['kevin', 'mike', 'susan', 'joe']
+```
+
+</td>
+</tr></tbody></table>
+
+- Add list items using ```.append()``` or the ```+``` operator:
+
+<table><tbody><tr>
+<td>
+
+```python
+names.append("conor")
+names += ["felix"] # added item must be list
+```
+
+</td>
+<td>
+
+```console
+['kevin', 'mike', 'susan', 'joe', 'conor', 'felix']
+```
+
+</td>
+</tr></tbody></table>
+
+- Remove list items using ```.remove()```, ```.pop()``` or the ```del``` keyword:
+
+<table><tbody><tr>
+<td>
+
+```python
+names.remove("mike")
+temp = names.pop(2) # note that pop returns the value!
+del names[1]
+print(names, temp, "was popped")
+```
+
+</td>
+<td>
+
+```console
+['kevin', 'conor', 'felix'] joe was popped
+```
 
 </td>
 </tr></tbody></table>
 
 ---
 
+# Lists (cont'd)
+
+- Use ```.sort()``` to sort items alphanumerically:
+
+<table><tbody><tr>
+<td>
+
+```python
+names.sort()
+numbers = [5, -1, 10, -3]
+numbers.sort()
+```
+
+</td>
+<td>
+
+```console
+names:   ['conor', 'felix', 'kevin']
+numbers: [-3, -1, 5, 10]
+```
+
+</td>
+</tr></tbody></table>
+
+#### List Comprehension
+
+- We will go over ```for``` loops later, but FYI ```list``` are <u>```iterable```</u>, which means they can be looped through.
+
+- <b>List Comprehension</b> allows us to create a new list from an old one based on some criteria using iteration:
+
+<table><tbody><tr>
+<td>
+
+```python
+upperNames = [name.upper() for name in names]
+iNames = [name for name in names if "i" in name]
+print(upperNames, iNames)
+```
+
+</td>
+<td>
+
+```console
+['CONOR', 'FELIX', 'KEVIN'] ['felix', 'kevin']
+```
+
+</td>
+</tr></tbody></table>
+
+- General syntax:
+
+```python
+newlist = [expression for item in iterable if condition == True]
+```
+
+---
+
 # Tuples
 
+- ```tuple``` are like ```list``` but with different purpose and behaviour.
+<br><br>
+#### Properties of ```tuple```: <b>&emsp;ordered&emsp;<u>immutable</u>&emsp;allow duplicates</b>
+
+- Note the difference here: ```tuple``` is <u>immutable</u> - its contents can't be changed once created!
+
+- Like list, create a tuple using square brackets, ```( )``` or ```tuple()```:
+
+```python
+seasons = ("fall", "winter", "spring", "summer")
+seasons = tuple(["fall", "winter", "spring", "summer"])
+```
+
+- Now if we try and change our ```tuple```, e.g. changing "winter" to "summer":
+
+```python
+seasons[1] = "summer"
+```
+```console
+TypeError: 'tuple' object does not support item assignment
+```
+
+---
+
+# Tuples (Cont'd)
+
+- Use ```tuple``` for collections of data which you are sure should not change.
+
+- OK... but why not just use ```list```?
+
+   - Immutability means they are ```hashable```: Makes parsing ```tuple``` slightly faster, more memory efficient.
+   - Makes your code <u>clearer</u> and <u>safer</u> for anyone working on it.
+   - From the <b>Zen of Python</b>: <i>Explicit is better than implicit. Readability counts.</i>
+
+- Like ```list```, ```tuple``` can be appended to:
+
+<table><tbody><tr>
+<td>
+
+```python
+seasons = ("fall", "winter", "spring")
+print(id(seasons))
+seasons += ("summer",)
+print("seasons:", seasons)
+print(id(seasons))
+```
+
+</td>
+<td>
+
+```console
+2104399491776
+seasons: ("fall", "winter", "spring", "summer")
+2104399162848
+```
+
+</td>
+</tr></tbody></table>
+
+- Note that immutability still holds here: the ```id``` of ```seasons``` has changed!
+
 ---
 
 # Dictionaries (```dict```)
 
+- Python's version of maps which store data in <b>key : value</b> pairs.
+<br><br>
+#### Properties of ```dict```: <b>&emsp;ordered&emsp;mutable&emsp;NO duplicates!</b>
+
+- <u>NO duplicates</u> in the sense that a ```dict``` can't have duplicate ```keys```.
+
+- Create ```dict``` using ```{ }``` in ```{key: value}``` format, or using the constructor (not common):
+
+```python
+employee = {
+   "name": "Clara",
+   "age": 32,
+   "id": 12345
+}
+employee = dict(name = "Clara", age = 32, id = 12345)
+```
+
+- Access ```dict``` items using ```mydict[key]``` format:
+
+<table><tbody><tr>
+<td>
+
+```python
+print(employee["name"])
+```
+
+</td>
+<td>
+
+```console
+Clara
+```
+
+</td>
+</tr></tbody></table>
+
 ---
 
 # Dictionaries (```dict```)
+
+- To add new items, simply create a new key:
+
+<table><tbody><tr>
+<td>
+
+```python
+employee["salary"] = 1.2e5
+```
+
+</td>
+<td>
+
+```console
+employee: {'name': 'Clara', 'age': 32, 'id': 12345, 'salary': 120000.0}
+```
+
+</td>
+</tr></tbody></table>
+
+- Using ```.keys()``` will give you a ```dict_keys``` object, which you can convert to ```list```:
+
+<table><tbody><tr>
+<td>
+
+```python
+print(list(employee.keys()))
+```
+
+</td>
+<td>
+
+```console
+['name', 'age', 'id', 'salary']
+```
+
+</td>
+</tr></tbody></table>
+
+- ```dict``` <i>values</i> can be any type, even ```dict```:
+
+<table><tbody><tr>
+<td>
+
+```python
+company = {
+    "name": "Bell Telephones",
+    "employee": employee
+}
+print(company) 
+```
+
+</td>
+<td>
+
+```console
+{'name': 'Bell Telephones', 
+   'employee': {'name': 'Clara', 'age': 32, 'id': 12345, 'salary': 120000.0}
+}
+```
+
+</td>
+</tr></tbody></table>
+
+- ```dict``` <i>keys</i> can be any <i>hashable</i> type, i.e. any immutable type, even ```tuple```!
