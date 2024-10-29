@@ -682,3 +682,10 @@ print(company)
 </tr></tbody></table>
 
 - ```dict``` <i>keys</i> can be any <i>hashable</i> type, i.e. any immutable type, even ```tuple```!
+
+---
+layout: center
+---
+
+# Activity
+Get practice storing and manipulating patient data in Python data structures.
