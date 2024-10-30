@@ -4,6 +4,8 @@ layout: center
 
 # Scientific Computing Basics
 
+## Leveraging powerful tools in Python for scientific data analysis.
+
 ---
 
 # Introducing ```NumPy``` (<b>Num</b>erical <b>Py</b>thon)
@@ -298,7 +300,7 @@ array([[[156, 118,  81],
 
 --- 
 
-# Working with Images
+# Manipulating Images with NumPy
 
 The ```ndarray``` nature of images allows us manipulate them as with any NumPy array.
 
@@ -352,6 +354,104 @@ plt.imshow(im[::16, ::16, :])
 
 </td>
 </tr></tbody></table>
+
+---
+
+# Introduction to `scikit-image`
+
+Designed for advanced image processing, building on `NumPy` to simplify and enhance image manipulation.
+
+- **Advantages over Basic NumPy**:
+   - Provides specialized image processing functions that would be complex to do with `NumPy` alone.
+   - Handles various image formats, color spaces, and built-in filters efficiently.
+   - Includes pre-built tools for common image tasks.
+
+- **Key Image Processing Tasks**:
+   - **Image Filtering**: Smoothing, sharpening, and edge detection.
+   - **Segmentation**: Isolating regions of interest (e.g., objects, boundaries).
+   - **Feature Extraction**: Identifying patterns and structures (e.g., corners, edges).
+   - **Geometric Transformations**: Resizing, rotating, and warping images.
+   - **Color Space Manipulation**: Converting between RGB, grayscale, HSV, etc.
+
+---
+
+# Manipulating Images with `scikit-image`
+
+<table><tbody><tr>
+<td>
+
+##### Arbitrary Rotation
+
+```python
+from skimage import transform
+
+plt.imshow(transform.rotate(im, angle=35.0, resize=False))
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_ski_rot.png" width=110>
+
+</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+<td>
+
+##### Gaussian Filtering
+
+```python
+from skimage import filters
+
+plt.imshow(filters.gaussian(im, sigma=5.0))
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_ski_blur.png" width=110>
+
+</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+<td>
+
+##### Spectral Unmixing and Contrast Adjust
+
+```python
+from skimage import color, exposure
+im_hed = color.rgb2hed(im)
+fig, ax = plt.subplots(1,3, figsize=(12,4))
+ax[0].imshow(exposure.adjust_gamma(im_hed[:,:,0], gamma=0.6), cmap='gray')
+ax[1].imshow(exposure.adjust_gamma(im_hed[:,:,1], gamma=0.1), cmap='gray')
+ax[2].imshow(exposure.adjust_gamma(im_hed[:,:,2], gamma=0.4), cmap='gray')
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_ski_hed.png" width=300>
+
+</td>
+</tr></tbody></table>
+
+---
+
+# Introduction to <b>Sci</b>entific <b>Py</b>thon: `SciPy`
+
+Python library built on `NumPy` that adds powerful tools for scientific and statistical analysis.
+
+- **Advantages over NumPy**:
+   - Provides advanced functionality for statistical analysis, hypothesis testing, and scientific computing.
+   - Includes modules for linear algebra, optimization, signal processing, and integration, making it ideal for in-depth scientific analysis.
+   - Offers high-level statistical tests (e.g., t-tests, ANOVA) and distributions, which are limited in `NumPy`.
+
+- **Core Capabilities for Scientific Data**:
+   - **Statistical Analysis**: Tools for probability distributions, descriptive statistics, and inferential tests.
+   - **Hypothesis Testing**: Built-in functions for common tests, such as t-tests, chi-square tests, and ANOVA.
+   - **Optimization and Fitting**: Functions for curve fitting, minimization, and root-finding.
 
 
 --- 
@@ -572,6 +672,53 @@ One-hot encoded labels:
    - **Validation Set**: Used for tuning model hyperparameters.
    - **Test Set**: Used to evaluate model performance on unseen data.
 
+---
+
+# Train/Test/Validation Split with `scikit-learn`
+
+```python
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+# Example data: 100 samples with 5 features each
+X = np.random.rand(100, 5)  # Features
+y = np.random.randint(0, 2, 100)  # Binary target (0 or 1)
+
+# Step 1: Split the data into 80% training and 20% temporary data (for validation + test)
+X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Step 2: Split the temporary data into 50% validation and 50% test (10% of original each)
+X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
+
+# Print the sizes of each set
+print("Training set size:", X_train.shape)
+print("Validation set size:", X_val.shape)
+print("Test set size:", X_test.shape)
+```
+
+```console
+Training set size: (80, 5)
+Validation set size: (10, 5)
+Test set size: (10, 5)
+```
+
+---
+
+# Dimensionality Reduction with scikit-learn
+Reduce the number of features while preserving important patterns in the data.
+
+   - Visualizing high-dimensional data
+   - Reducing noise and improving model performance
+   - Lowering computational costs
+
+- **Principal Component Analysis (PCA)**:
+   - Projects data onto a smaller number of components that capture the most variance.
+   - Effective for linearly separable data, but may miss complex, nonlinear patterns.
+
+- **t-Stochastic Neighbor Embedding (t-SNE)**:
+   - Focuses on preserving local structure and clustering similar points together.
+   - Ideal for visualizing data clusters in high-dimensional data.
+   - Often superior to PCA for tasks involving nonlinear relationships and complex datasets.
 
 --- 
 
