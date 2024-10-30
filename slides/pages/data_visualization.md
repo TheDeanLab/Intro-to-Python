@@ -302,4 +302,4 @@ layout : center
 # Activity
 Visualize properties of patient dataset
 
-(go to Jupyter notebook XXX)
+(go to Jupyter notebook in the GitHub : activity_python-data_visualization.ipynb)

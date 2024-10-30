@@ -470,4 +470,4 @@ layout : center
 # Activity
 Use libraries to do exploratory analysis of patient dataset
 
-(go to Jupyter notebook XXX)
+(go to Jupyter notebook in the GitHub : activity_python-library-ecosystem.ipynb)
