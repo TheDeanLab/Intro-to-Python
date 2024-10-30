@@ -8,7 +8,7 @@ __pycache__/
 *.bak
 *.ipynb_checkpoints/
 datasets/covid-chestxray-dataset/*
-activities/*-test.ipynb
+# activities/*-test.ipynb
 slides/.slidev/snapshots/snapshots.json
 .DS_Store
 .DS_Store
