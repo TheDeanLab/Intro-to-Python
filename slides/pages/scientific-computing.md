@@ -170,7 +170,7 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 
 ### Fourier domain: ```np.fft.fft/fft2, np.fft.ifft/ifft2, ...```
 <br><br>
-## Let's not get bogged down and instead see what ```NumPy``` can do!
+## ```NumPy``` can do a ton! Let's not get too bogged down...
 ## But as usual, <a href="https://numpy.org/">read the docs</a>. 
 
 ---
@@ -221,6 +221,138 @@ io.imread('img.png')
 --- 
 
 # Working with Images
+
+- Let's load an image using some of the tools that we're already familiar with:
+
+<table><tbody><tr>
+<td>
+
+```python
+from skimage import io
+import matplotlib.pyplot as plt
+
+im = io.imread("..\\datasets\\images\\ihc.png")
+plt.imshow(im)
+```
+
+</td>
+<td>
+
+<img src="../images/ihc.png" width=180>
+
+</td>
+</tr></tbody></table>
+
+- What are some of the properties of our image?
+
+
+<table><tbody><tr>
+<td>
+
+```python
+print(type(im))
+print(im.shape)
+```
+
+</td>
+<td>
+
+```console
+<class 'numpy.ndarray'>
+(512, 512, 3)
+```
+
+</td>
+</tr></tbody></table>
+
+- Many image analysis packages default to ```numpy.ndarray``` as the image datatype, making them convenient to work with.
+
+---
+
+# Working with Images
+
+### RGB Color
+
+- Note the 3rd dimension on our image: these are the <b>red, green, blue 
+(<span style="color:red">R</span>
+<span style="color:green">G</span>
+<span style="color:blue">B</span>)
+</b> components of our image.
+
+<center>
+    <img src="../images/ihc_rgb.png" width=512>
+</center>
+
+- If we ``print(im)`` directly...
+
+<center>
+```console
+array([[[156, 118,  81],
+        [163, 125,  88],
+        [156, 116,  81], 
+        ..., etc
+```
+</center>
+
+... we see that each pixel has the form <b>\[r, g, b\]</b>. Combined these values can form any color, but sometimes it may be useful to work with the RGB channels individually.
+
+--- 
+
+# Working with Images
+
+The ```ndarray``` nature of images allows us manipulate them as with any NumPy array.
+
+<table><tbody><tr>
+<td>
+
+##### Cropping
+
+```python
+plt.imshow(im[64:128, 64:128, :])
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_crop.png" width=110>
+
+</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+<td>
+
+##### Rotate
+
+```python
+plt.imshow(im.swapaxes(0,1))
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_trans.png" width=110>
+
+</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+<td>
+
+##### Downsample
+
+```python
+plt.imshow(im[::16, ::16, :])
+```
+
+</td>
+<td>
+
+<img src="../images/ihc_ds.png" width=110>
+
+</td>
+</tr></tbody></table>
+
 
 --- 
 
