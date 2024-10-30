@@ -483,17 +483,95 @@ F = 1.0993
 
 # Introduction to Machine Learning
 
+- **Definition**: Field of AI where computers learn patterns from data to make predictions or decisions.
+
+- **Types**:
+   - **Supervised Learning**: Uses labeled data to predict outcomes (e.g., Linear Regression, Decision Trees).
+   - **Unsupervised Learning**: Finds patterns in unlabeled data (e.g., K-Means Clustering, PCA).
+
+- **Classification vs. Regression**:
+   - **Classification**: Predicts categories (e.g., spam vs. not spam).
+   - **Regression**: Predicts continuous values (e.g., house prices).
+
+---
+
+# Introduction to scikit-learn
+
+A powerful Python library for machine learning providing data preprocessing, modeling, and evaluation.
+
+- **Core Features**:
+   - Algorithms for classification, regression, clustering, and dimensionality reduction.
+   - Tools for data splitting, cross-validation, and performance metrics.
+   - Integrates easily with `NumPy` and `pandas`.
+
+- **Strengths**:
+   - Easy-to-use API with consistent syntax across models.
+   - Extensive documentation and community support.
+   - Great for rapid prototyping and experimentation.
+
+- **Weaknesses**:
+   - Not ideal for deep learning (use `TensorFlow` or `PyTorch` for that).
+   - Limited support for handling very large datasets directly (consider `Dask` or `Spark`).
+
+
 --- 
 
-# Data Preparation
+# Data Preparation for Machine Learning
 
-- Features vs Targets
+- **Preparation for Classification vs. Regression**:
+   - **Classification**: Ensure target labels are categorical; features may need encoding (e.g., one-hot).
+   - **Regression**: Target values are continuous; consider scaling features (e.g., standardization).
 
-- Classification vs Regression
+<table><tbody><tr>
+<td>
 
-- One-hot encoding?
+```python
+from sklearn.preprocessing import OneHotEncoder
+import numpy as np
 
-- Train/Test/Validation split!
+# Example class labels for a classification task
+labels = np.array(['cat', 'dog', 'rabbit', 'dog', 'cat'])
+
+# Initialize the OneHotEncoder
+encoder = OneHotEncoder(sparse=False)
+
+# Fit and transform the labels
+encoded_labels = encoder.fit_transform(labels.reshape(-1, 1))
+
+# Print the result
+print("Original labels:", labels)
+print("One-hot encoded labels:\n", encoded_labels)
+```
+
+</td>
+<td>
+
+```console
+Original labels: ['cat' 'dog' 'rabbit' 'dog' 'cat']
+One-hot encoded labels:
+ [[1. 0. 0.]
+  [0. 1. 0.]
+  [0. 0. 1.]
+  [0. 1. 0.]
+  [1. 0. 0.]]
+```
+
+</td>
+</tr></tbody></table>
+
+---
+
+# Data Preparation for Machine Learning
+
+- **Features vs. Targets**:
+   - **Features**: Input variables (e.g., age, income) that the model uses for learning.
+   - **Targets**: Output variable(s) the model predicts (e.g., class label for classification, a numeric value for regression).
+
+- **Train/Test/Validation Split**:
+   - **Train Set**: Used for training the model.
+   - **Validation Set**: Used for tuning model hyperparameters.
+   - **Test Set**: Used to evaluate model performance on unseen data.
+
 
 --- 
 
