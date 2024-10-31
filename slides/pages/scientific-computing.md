@@ -11,17 +11,23 @@ layout: center
 # Introducing ```NumPy``` (<b>Num</b>erical <b>Py</b>thon)
 Effecient mathematical operations on N-dimensional data.
 
+<v-click>
+
 First, lets import the library:
 ```python
 import numpy as np
 ```
 
+</v-click>
+<v-click>
+
 - ```Lists``` are versatile in that they can store heterogeneous data and can have "ragged" dimensions.
 
 - Many applications, however, involve operations on rectangular N x M (or more) arrays of the same type, e.g. <b>matrix operations</b>. This is where NumPy really shines!
 
-- If you have used MATLAB, NumPy will be very familiar!
-<br>
+</v-click>
+<v-click>
+
 #### Fundemental type: <b>numpy.ndarray</b>
 Create using any rectangular list (or tuple) of a single type:
 ```python
@@ -29,6 +35,8 @@ arr = np.array([[1,2,3,4],[5,6,7,8]])
 ```
 
 - Can also "initialize" with ```np.zeros, np.ones, np.empty, np.random```, and more.
+
+</v-click>
 
 ---
 
@@ -65,6 +73,8 @@ a + b: [[ 4.  6.  8. 10.]
 </td>
 </tr></tbody></table>
 
+<v-click>
+
 - In addition to <i>slicing</i> (recall w/ ```list```), ```ndarray``` supports <b>Integer</b> and <b>Boolean</b> indexing:
 
 <table><tbody><tr>
@@ -94,6 +104,8 @@ positive: [6 7 9 2]
 </td>
 </tr></tbody></table>
 
+</v-click>
+
 ---
 
 # Broadcasting 
@@ -119,6 +131,8 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 </td>
 </tr>
 
+<v-click>
+
 <tr>
 <td>
 <img src="https://numpy.org/doc/stable/_images/broadcasting_2.png" width="288" height="128">
@@ -136,6 +150,9 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 
 </td>
 </tr>
+
+</v-click>
+<v-click>
 
 <tr>
 <td>
@@ -155,6 +172,8 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 </td>
 </tr>
 
+</v-click>
+
 </tbody></table>
 
 ---
@@ -171,9 +190,14 @@ NumPy handles operations between differently sized arrays by <i>stretching</i> a
 ### Linear algebra: ```np.transpose, np.invert, np.dot, np.cross, ...```
 
 ### Fourier domain: ```np.fft.fft/fft2, np.fft.ifft/ifft2, ...```
+
+<v-click>
+
 <br><br>
 ## ```NumPy``` can do a ton! Let's not get too bogged down...
 ## But as usual, <a href="https://numpy.org/">read the docs</a>. 
+
+</v-click>
 
 ---
 
@@ -226,6 +250,8 @@ io.imread('img.png')
 
 - Let's load an image using some of the tools that we're already familiar with:
 
+<v-click>
+
 <table><tbody><tr>
 <td>
 
@@ -240,10 +266,13 @@ plt.imshow(im)
 </td>
 <td>
 
-<img src="../images/ihc.png" width=180>
+<img src="..\images\ihc.png" width=180>
 
 </td>
 </tr></tbody></table>
+
+</v-click>
+<v-click>
 
 - What are some of the properties of our image?
 
@@ -267,13 +296,20 @@ print(im.shape)
 </td>
 </tr></tbody></table>
 
+</v-click>
+<v-click>
+
 - Many image analysis packages default to ```numpy.ndarray``` as the image datatype, making them convenient to work with.
+
+</v-click>
 
 ---
 
 # Working with Images
 
 ### RGB Color
+
+<v-click>
 
 - Note the 3rd dimension on our image: these are the <b>red, green, blue 
 (<span style="color:red">R</span>
@@ -282,8 +318,11 @@ print(im.shape)
 </b> components of our image.
 
 <center>
-    <img src="../images/ihc_rgb.png" width=512>
+    <img src="..\images\ihc_rgb.png" width=512>
 </center>
+
+</v-click>
+<v-click>
 
 - If we ``print(im)`` directly...
 
@@ -297,6 +336,8 @@ array([[[156, 118,  81],
 </center>
 
 ... we see that each pixel has the form <b>\[r, g, b\]</b>. Combined these values can form any color, but sometimes it may be useful to work with the RGB channels individually.
+
+</v-click>
 
 --- 
 
@@ -316,7 +357,7 @@ plt.imshow(im[64:128, 64:128, :])
 </td>
 <td>
 
-<img src="../images/ihc_crop.png" width=110>
+<img src="..\images\ihc_crop.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -333,7 +374,7 @@ plt.imshow(im.swapaxes(0,1))
 </td>
 <td>
 
-<img src="../images/ihc_trans.png" width=110>
+<img src="..\images\ihc_trans.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -350,7 +391,7 @@ plt.imshow(im[::16, ::16, :])
 </td>
 <td>
 
-<img src="../images/ihc_ds.png" width=110>
+<img src="..\images\ihc_ds.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -361,10 +402,15 @@ plt.imshow(im[::16, ::16, :])
 
 Designed for advanced image processing, building on `NumPy` to simplify and enhance image manipulation.
 
+<v-click>
+
 - **Advantages over Basic NumPy**:
    - Provides specialized image processing functions that would be complex to do with `NumPy` alone.
    - Handles various image formats, color spaces, and built-in filters efficiently.
    - Includes pre-built tools for common image tasks.
+
+</v-click>
+<v-click>
 
 - **Key Image Processing Tasks**:
    - **Image Filtering**: Smoothing, sharpening, and edge detection.
@@ -372,6 +418,8 @@ Designed for advanced image processing, building on `NumPy` to simplify and enha
    - **Feature Extraction**: Identifying patterns and structures (e.g., corners, edges).
    - **Geometric Transformations**: Resizing, rotating, and warping images.
    - **Color Space Manipulation**: Converting between RGB, grayscale, HSV, etc.
+
+</v-click>
 
 ---
 
@@ -391,7 +439,7 @@ plt.imshow(transform.rotate(im, angle=35.0, resize=False))
 </td>
 <td>
 
-<img src="../images/ihc_ski_rot.png" width=110>
+<img src="..\images\ihc_ski_rot.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -410,7 +458,7 @@ plt.imshow(filters.gaussian(im, sigma=5.0))
 </td>
 <td>
 
-<img src="../images/ihc_ski_blur.png" width=110>
+<img src="..\images\ihc_ski_blur.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -432,7 +480,7 @@ ax[2].imshow(exposure.adjust_gamma(im_hed[:,:,2], gamma=0.4), cmap='gray')
 </td>
 <td>
 
-<img src="../images/ihc_ski_hed.png" width=300>
+<img src="..\images\ihc_ski_hed.png" width=300>
 
 </td>
 </tr></tbody></table>
@@ -443,16 +491,22 @@ ax[2].imshow(exposure.adjust_gamma(im_hed[:,:,2], gamma=0.4), cmap='gray')
 
 Python library built on `NumPy` that adds powerful tools for scientific and statistical analysis.
 
+<v-click>
+
 - **Advantages over NumPy**:
    - Provides advanced functionality for statistical analysis, hypothesis testing, and scientific computing.
    - Includes modules for linear algebra, optimization, signal processing, and integration, making it ideal for in-depth scientific analysis.
    - Offers high-level statistical tests (e.g., t-tests, ANOVA) and distributions, which are limited in `NumPy`.
+
+</v-click>
+<v-click>
 
 - **Core Capabilities for Scientific Data**:
    - **Statistical Analysis**: Tools for probability distributions, descriptive statistics, and inferential tests.
    - **Hypothesis Testing**: Built-in functions for common tests, such as t-tests, chi-square tests, and ANOVA.
    - **Optimization and Fitting**: Functions for curve fitting, minimization, and root-finding.
 
+</v-click>
 
 --- 
 
@@ -461,6 +515,8 @@ Python library built on `NumPy` that adds powerful tools for scientific and stat
 ### T-Test for Independence
 
 - Let's use what we have learned to generate some toy data and perform a T-Test for independence.
+
+<v-click>
 
 <table><tbody>
 
@@ -483,7 +539,7 @@ sns.violinplot(data=[v0, v1, v2], inner='point')
 </td>
 <td>
 
-<img src="../images/sci-comp_ttest_violin.png" width=256>
+<img src="..\images\sci-comp_ttest_violin.png" width=256>
 Always <u>visualize your data</u>!
 
 </td>
@@ -514,13 +570,18 @@ T-Test Results:
 
 </tbody></table>
 
+</v-click>
+
 ---
 
 # Statistical Analysis with ```SciPy```
 
+
 ### One-way ANOVA
 
 - <i>"Analysis of variance"</i> using the F-Statistic. Tests the null hypothesis that <u>all means are equal</u>.
+
+<v-click>
 
 <table><tbody>
 
@@ -548,6 +609,9 @@ F = 4.9470
 </td>
 </tr>
 </tbody></table>
+
+</v-click>
+<v-click>
 
 - What happens to the ANOVA if we drastically reduce the "effect size (```loc```)" of ```v2``` from ```1.0``` to ```0.2```?
 
@@ -579,19 +643,30 @@ F = 1.0993
 
 - ```P > 0.05```: There is no significant difference between our datasets.
 
+</v-click>
+
 ---
 
 # Introduction to Machine Learning
 
-- **Definition**: Field of AI where computers learn patterns from data to make predictions or decisions.
+Field of AI where computers learn patterns from data to make predictions or decisions.
+
+<br>
+<v-click>
 
 - **Types**:
    - **Supervised Learning**: Uses labeled data to predict outcomes (e.g., Linear Regression, Decision Trees).
    - **Unsupervised Learning**: Finds patterns in unlabeled data (e.g., K-Means Clustering, PCA).
 
+</v-click>
+<br>
+<v-click>
+
 - **Classification vs. Regression**:
    - **Classification**: Predicts categories (e.g., spam vs. not spam).
    - **Regression**: Predicts continuous values (e.g., house prices).
+
+</v-click>
 
 ---
 
@@ -599,19 +674,29 @@ F = 1.0993
 
 A powerful Python library for machine learning providing data preprocessing, modeling, and evaluation.
 
+<v-click>
+
 - **Core Features**:
    - Algorithms for classification, regression, clustering, and dimensionality reduction.
    - Tools for data splitting, cross-validation, and performance metrics.
    - Integrates easily with `NumPy` and `pandas`.
+
+</v-click>
+<v-click>
 
 - **Strengths**:
    - Easy-to-use API with consistent syntax across models.
    - Extensive documentation and community support.
    - Great for rapid prototyping and experimentation.
 
+</v-click>
+<v-click>
+
 - **Weaknesses**:
    - Not ideal for deep learning (use `TensorFlow` or `PyTorch` for that).
    - Limited support for handling very large datasets directly (consider `Dask` or `Spark`).
+
+</v-click>
 
 ---
 
@@ -619,17 +704,25 @@ A powerful Python library for machine learning providing data preprocessing, mod
 
 Unsupervised learning is used to find patterns or groupings in data without labeled outcomes.
 
+<v-click>
+
 ### Clustering 
 Group data into clusters based on similarity.
    - **K-Means**: Partitions data into a set number of clusters.
    - **Hierarchical Clustering**: Builds a tree of clusters for hierarchical structure.
    - **DBSCAN**: Identifies clusters based on density, useful for finding irregular shapes.
-<br><br>
+
+</v-click>
+<br>
+<v-click>
+
 ### Dimensionality Reduction 
 Reduce data complexity, retain important structure.
    - **Principal Component Analysis (PCA)**: Reduces data to components that maximize variance.
    - **t-SNE**: Preserves local relationships in data, ideal for visualizing clusters.
    - **UMAP**: Maintains global and local structure, suitable for large datasets.
+
+</v-click>
 
 ---
 
@@ -647,6 +740,8 @@ Reduce data complexity, retain important structure.
     </div>
 </div>
 
+<v-click>
+
 # DBSCAN
 
 [sklearn.cluster.DBSCAN](https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.DBSCAN.html)
@@ -661,6 +756,8 @@ Reduce data complexity, retain important structure.
     </div>
 </div>
 
+</v-click>
+
 ---
 
 # Principal Component Analysis (PCA)
@@ -670,7 +767,8 @@ Reduce data complexity, retain important structure.
 - Reduces dimensions by projecting data onto new axes that maximize variance.<br>
 - Captures the most important features while minimizing data loss.
 
-<center><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*vz4K-fqiy19u_W-9" width="600"></center>
+<br>
+<v-click>
 
 # t-SNE (t-Distributed Stochastic Neighbor Embedding)
 
@@ -679,19 +777,34 @@ Reduce data complexity, retain important structure.
 - Maps high-dimensional data into a 2D or 3D space, preserving local similarity.<br>
 - Excellent for visualizing clusters, especially in high-dimensional data.
 
+</v-click>
+<v-click>
+
+<center><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*vz4K-fqiy19u_W-9" width="600"></center>
+
+</v-click>
+
 ---
 
 # Supervised Learning
 
 Supervised learning uses labeled data to train models to make predictions or classifications based on input features.
 
-### Applications
+<v-click>
 
-- **Classification**: Assigns labels to input data based on trained categories.
-    - **Common Techniques**: Logistic Regression, Support Vector Machines (SVM), Decision Trees.
+### **Classification** 
+Assigns labels to input data based on trained categories.
+- **Common Techniques**: Logistic Regression, Support Vector Machines (SVM), Decision Trees.
 
-- **Regression**: Predicts continuous outcomes based on input data.
-    - **Common Techniques**: Linear Regression, Ridge Regression, Random Forest Regression.
+</v-click>
+<br>
+<v-click>
+
+### **Regression**
+Predicts continuous outcomes based on input data.
+- **Common Techniques**: Linear Regression, Ridge Regression, Random Forest Regression.
+
+</v-click>
 
 ---
 
@@ -709,6 +822,8 @@ Supervised learning uses labeled data to train models to make predictions or cla
     </div>
 </div>
 
+<v-click>
+
 # Support Vector Machines (SVM)
 
 [sklearn.svm.SVC](https://scikit-learn.org/1.5/modules/generated/sklearn.svm.SVC.html)
@@ -723,6 +838,8 @@ Supervised learning uses labeled data to train models to make predictions or cla
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kernel_Machine.svg/1920px-Kernel_Machine.svg.png" width="300">
     </div>
 </div>
+
+</v-click>
 
 ---
 
@@ -740,6 +857,8 @@ Supervised learning uses labeled data to train models to make predictions or cla
     </div>
 </div>
 
+<v-click>
+
 # Ridge Regression
 
 [sklearn.linear_model.Ridge](https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.Ridge.html)
@@ -754,6 +873,8 @@ Supervised learning uses labeled data to train models to make predictions or cla
         <img src="https://i0.wp.com/thaddeus-segura.com/wp-content/uploads/2020/09/reg-intro.png?resize=768%2C421&ssl=1" width="300">
     </div>
 </div>
+
+</v-click>
 
 --- 
 
@@ -772,6 +893,9 @@ X = X[:,None]  # sklearn models expect N x M features
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
+
+<v-click>
+
 <div style="display: flex; justify-content: space-between;">
 <div class="special-class">
 ```python
@@ -792,6 +916,8 @@ plt.legend(('y_test', 'y_pred'))
 <img src="..\images\linear_reg.png" width=300>
 </div>
 </div>
+
+</v-click>
 
 --- 
 
