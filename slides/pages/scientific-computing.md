@@ -266,7 +266,7 @@ plt.imshow(im)
 </td>
 <td>
 
-<img src="..\images\ihc.png" width=180>
+<img src="/images/ihc.png" width=180>
 
 </td>
 </tr></tbody></table>
@@ -318,7 +318,7 @@ print(im.shape)
 </b> components of our image.
 
 <center>
-    <img src="..\images\ihc_rgb.png" width=512>
+    <img src="/images/ihc_rgb.png" width=512>
 </center>
 
 </v-click>
@@ -357,7 +357,7 @@ plt.imshow(im[64:128, 64:128, :])
 </td>
 <td>
 
-<img src="..\images\ihc_crop.png" width=110>
+<img src="/images/ihc_crop.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -374,7 +374,7 @@ plt.imshow(im.swapaxes(0,1))
 </td>
 <td>
 
-<img src="..\images\ihc_trans.png" width=110>
+<img src="/images/ihc_trans.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -391,7 +391,7 @@ plt.imshow(im[::16, ::16, :])
 </td>
 <td>
 
-<img src="..\images\ihc_ds.png" width=110>
+<img src="/images/ihc_ds.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -439,7 +439,7 @@ plt.imshow(transform.rotate(im, angle=35.0, resize=False))
 </td>
 <td>
 
-<img src="..\images\ihc_ski_rot.png" width=110>
+<img src="/images/ihc_ski_rot.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -458,7 +458,7 @@ plt.imshow(filters.gaussian(im, sigma=5.0))
 </td>
 <td>
 
-<img src="..\images\ihc_ski_blur.png" width=110>
+<img src="/images/ihc_ski_blur.png" width=110>
 
 </td>
 </tr></tbody></table>
@@ -480,7 +480,7 @@ ax[2].imshow(exposure.adjust_gamma(im_hed[:,:,2], gamma=0.4), cmap='gray')
 </td>
 <td>
 
-<img src="..\images\ihc_ski_hed.png" width=300>
+<img src="/images/ihc_ski_hed.png" width=300>
 
 </td>
 </tr></tbody></table>
@@ -539,7 +539,7 @@ sns.violinplot(data=[v0, v1, v2], inner='point')
 </td>
 <td>
 
-<img src="..\images\sci-comp_ttest_violin.png" width=256>
+<img src="/images/sci-comp_ttest_violin.png" width=256>
 Always <u>visualize your data</u>!
 
 </td>
@@ -913,7 +913,7 @@ plt.legend(('y_test', 'y_pred'))
 ```
 </div>
 <div>
-<img src="..\images\linear_reg.png" width=300>
+<img src="/images/linear_reg.png" width=300>
 </div>
 </div>
 
