@@ -926,7 +926,9 @@ plt.legend(('y_test', 'y_pred'))
 - **Preparation for Classification vs. Regression**:
    - **Regression**: Target values are continuous; consider scaling features (e.g., standardization).
    - **Classification**: Ensure target labels are categorical; features may need encoding (e.g., <u>one-hot</u>).
-   
+
+<v-click>
+
 <table><tbody><tr>
 <td>
 
@@ -960,24 +962,38 @@ One-hot encoded labels:
 </td>
 </tr></tbody></table>
 
+</v-click>
+<v-click>
+
 - <b>Dimensionality reduction</b> from the previous slide could be considered data preparation for ML!
 
 <center><b><u>
 Visualize your data!
 </u></b></center>
 
+</v-click>
+
 ---
 
 # Data Preparation for Machine Learning
+
+<br>
+<v-click>
 
 - **Features vs. Targets**:
    - **Features**: Input variables (e.g., age, income) that the model uses for learning.
    - **Targets**: Output variable(s) the model predicts (e.g., class label for classification, a numeric value for regression).
 
+</v-click>
+<br>
+<v-click>
+
 - **Train/Test/Validation Split**:
    - **Train Set**: Used for training the model.
    - **Validation Set**: Used for tuning model hyperparameters.
    - **Test Set**: Used to evaluate model performance on unseen data.
+
+</v-click>
 
 ---
 
