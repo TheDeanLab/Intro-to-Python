@@ -170,28 +170,6 @@ Each package, and all of its dependencies, explicitly imported from a package ma
 
 ---
 layout: image-right
-image: /images/conda_env_list.png
-backgroundSize: contain
----
-
-# Environment Management with Anaconda
-Working with Environments
-** **
-
-**List all environments.**
-
-```
-conda env list
-```
-
-**Activate an environment**
-
-```
-conda activate EnvironmentName
-```
-
----
-layout: image-right
 image: /images/conda_list.png
 backgroundSize: contain
 ---
@@ -217,6 +195,43 @@ conda activate EnvironmentName
 ```
 conda list
 ```
+
+
+
+---
+
+# Adding your environment to a JupyterLab Notebook
+
+1. **Activate Your Environment:**
+    - Open your terminal or command prompt and activate the environment you want to add to Jupyter:
+      ```bash
+      conda activate environment_name
+      ```
+
+2. **Install the `ipykernel` Package (if not already installed):**
+    - Ensure that `ipykernel` is installed in your environment so it can be used as a Jupyter kernel:
+      ```bash
+      pip install ipykernel
+      ```
+
+---
+
+# Adding your environment to a JupyterLab Notebook
+
+1. **Add the Environment as a JupyterLab Kernel:**
+    - Use the following command to add your environment as a kernel in Jupyter:
+      ```bash
+      python -m ipykernel install --user --name environment_name --display-name "My Environment"
+      ```
+    - Replace `"environment_name"` with your environment’s name, and you can customize the display name shown in Jupyter (e.g., "My Environment").
+
+2. **Verify in JupyterLab:**
+    - Open Jupyter Notebook or JupyterLab:
+      ```bash
+      jupyter notebook
+      ```
+    - In a new notebook, go to **Kernel > Change Kernel**, and you should see your environment.
+
 
 ---
 

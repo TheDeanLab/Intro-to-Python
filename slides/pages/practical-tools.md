@@ -189,51 +189,6 @@ JupyterLab Notebooks
 
     You can also create markdown cells for documentation. Switch a cell to markdown mode by selecting ***Markdown*** from the dropdown and typing text for documentation.
 
----
-
-# Practical Tools for Running Python Software
-JupyterLab Notebooks
-
-** **
-
-**Adding your environment to a JupyterLab Notebook.**
-
-1. **Activate Your Environment:**
-    - Open your terminal or command prompt and activate the environment you want to add to Jupyter:
-      ```bash
-      conda activate environment_name
-      ```
-
-2. **Install the `ipykernel` Package (if not already installed):**
-    - Ensure that `ipykernel` is installed in your environment so it can be used as a Jupyter kernel:
-      ```bash
-      pip install ipykernel
-      ```
-
----
-
-# Practical Tools for Running Python Software
-JupyterLab Notebooks
-
-** **
-
-**Adding your environment to a JupyterLab Notebook.**
-
-3. **Add the Environment as a JupyterLab Kernel:**
-    - Use the following command to add your environment as a kernel in Jupyter:
-      ```bash
-      python -m ipykernel install --user --name environment_name --display-name "My Environment"
-      ```
-    - Replace `"environment_name"` with your environment’s name, and you can customize the display name shown in Jupyter (e.g., "My Environment").
-
-4. **Verify in JupyterLab:**
-    - Open Jupyter Notebook or JupyterLab:
-      ```bash
-      jupyter notebook
-      ```
-    - In a new notebook, go to **Kernel > Change Kernel**, and you should see your environment.
-
-
 
 ---
 
