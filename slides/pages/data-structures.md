@@ -564,39 +564,10 @@ numbers: [-3, -1, 5, 10]
 
 <v-click>
 
-#### List Comprehension
-
 - We will go over ```for``` loops later, but FYI ```list``` are <u>```iterable```</u>, which means they can be looped through.
 
-- <b>List Comprehension</b> allows us to create a new list from an old one based on some criteria using iteration:
-
-<table><tbody><tr>
-<td>
-
-```python
-upperNames = [name.upper() for name in names]
-iNames = [name for name in names if "i" in name]
-print(upperNames, iNames)
-```
-
-</td>
-<td>
-
-```console
-['CONOR', 'FELIX', 'KEVIN'] ['felix', 'kevin']
-```
-
-</td>
-</tr></tbody></table>
-
-- General syntax:
-
-```python
-newlist = [expression for item in iterable if condition == True]
-```
-
 </v-click>
-
+ 
 ---
 
 # Tuples

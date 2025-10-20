@@ -235,6 +235,47 @@ For and While
 For and While
 
 ** **
+
+<v-click>
+
+**List Comprehension** allows us to create a new list from an old one based on some criteria using iteration:
+- It is a short-form version of a for loop to make another list
+
+<table><tbody><tr>
+<td>
+
+```python
+names = ["susan", "mike", "susan", "joe"]
+upperNames = [name.upper() for name in names]
+iNames = [name for name in names if "i" in name]
+print(upperNames, iNames)
+```
+
+</td>
+<td>
+
+```console
+['CONOR', 'FELIX', 'KEVIN'] ['felix', 'kevin']
+```
+
+</td>
+</tr></tbody></table>
+
+- General syntax:
+
+```python
+newlist = [expression for item in iterable if condition == True]
+```
+
+</v-click>
+
+
+---
+
+# Iteration (Loops) Control
+For and While
+
+** **
 - Combined with slicing, `::` or indexing `range`, **for** can iterate over a subset of the list 
 
 <v-click>

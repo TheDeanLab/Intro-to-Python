@@ -43,6 +43,12 @@ hide: true
 ---
 
 
+---
+src: ./pages/creatiing-environments.md
+hide: false
+---
+
+
 
 ---
 src: ./pages/practical-tools.md
@@ -50,10 +56,12 @@ hide: false
 ---
 
 
+
 ---
 src: ./pages/data-structures.md
 hide: false
 ---
+
 
 
 ---
@@ -76,6 +84,7 @@ hide: false
 ---
 
 
+
 ---
 src: ./pages/data-handling.md
 hide: false
@@ -94,6 +103,7 @@ hide: false
 src: ./pages/data_visualization.md
 hide: false
 ---
+
 
 
 ---
