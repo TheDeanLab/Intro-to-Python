@@ -19,7 +19,7 @@ overviewSnapshots: true
 
 ---
 
-# Introduction to Python 2024
+# Introduction to Python 2025
 
 Lyda Hill Department of Bioinformatics
 
