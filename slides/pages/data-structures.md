@@ -663,6 +663,45 @@ seasons: ("fall", "winter", "spring", "summer")
 
 ---
 
+# Mutability Matters! Be wary of implications...
+
+<v-click>
+
+```python
+my_list = [1,2,3]
+
+def change_list(l: list): # passed by reference
+    l += [4]
+    print("l =", l) # l = [1, 2, 3, 4]
+
+change_list(my_list)
+print("my_list =", my_list) # my_list = [1, 2, 3, 4]
+
+my_tuple = (1,2,3)
+
+def change_tuple(t: tuple): # passed by value
+    t += (4,)
+    print("t =", t) # t = (1, 2, 3, 4)
+
+change_tuple(my_tuple)
+print("my_tuple =", my_tuple) # my_tuple = (1, 2, 3)
+```
+
+</v-click>
+<v-click>
+
+```python
+# aliasing
+list1 = ['a', 'b']
+list2 = list1 # 2 references 1
+list2[0] = 'c'
+print(list1) # ['c', 'b'] (both are changed!)
+```
+
+</v-click>
+
+---
+
 # Dictionaries (```dict```)
 
 Python's version of maps which store data in <b>key : value</b> pairs.
