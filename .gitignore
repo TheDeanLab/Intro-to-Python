@@ -15,3 +15,4 @@ slides/.slidev/snapshots/snapshots.json
 slides/.slidev/snapshots/snapshots.json
 .vscode/settings.json
 /activities/extra
+.DS_Store
