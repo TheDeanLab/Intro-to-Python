@@ -1,14 +1,14 @@
-# Nanocourse: Introduction to Python
-## Lyda Hill Department of Binformatics
+# Introduction to Python
+## Lyda Hill Department of Bioinformatics
 ### University of Texas Southwestern Medical Center
 
 -------------------------
 
 ## Course Information
-**Dates:** 10/30/2024 - 10/31/2024  
-**Instructors:** Kevin Dean, Ph.D., Felix Zhou, Ph.D., and Conor McFadden  
+**Dates:** 10/21/2025 - 10/22/2025  
+**Instructors:** Kevin Dean, Ph.D., Sriya Veerapaneni, and Conor McFadden  
 **Credit Hours:** 1  
-**Room:** G9.102  
+**Room:** ND11.218  
 **Class Size:** 40  
 
 -------------------------
@@ -27,8 +27,3 @@ By the end of this course, participants will be able to:
 - Debug code efficiently.
 - Write reusable code using functions and modules.
 
--------------------------
-
-## Pre-Requisites
-- Install [Miniconda](https://docs.anaconda.com/miniconda/).  
-- Apply for a [PyCharm Student license](https://www.jetbrains.com/community/education/#students) and install it on your computer.
