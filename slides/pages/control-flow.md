@@ -155,14 +155,14 @@ For and While
 ::left:: 
 
 ## For: 
-- Do X for every item in a finite list of items
+- Do X for every item in a finite iterable
 
 <p style="text-align:center;">
 ```mermaid {theme: 'neutral', scale: 0.6}
 graph TD
-A[Start] --> B{Is this the last item in the list?}
-B -- Yes --> C[End]
-B -- No --> D[Expression]
+A[Start] --> B{Any items remaining?}
+B -- No --> C[End]
+B -- Yes --> D[Expression]
 D --> A
 ```
 </p>
@@ -190,7 +190,7 @@ E --> B
 For and While
 
 ** **
-**For** can be used to iterate over a list (array) in many different ways
+**For** can be used to iterate over a list (array) or any other iterator in many different ways
 
 <v-click>
 
@@ -211,7 +211,7 @@ For and While
 
 <v-click>
 
-2. Create an index for each item in list and iterate
+2. Create an index for each item in iterator and iterate
   ```python
     for i in range(len(x)):
       item = x[i]

@@ -15,9 +15,9 @@ layout: two-cols-header
 ### Day 1
 - Opening Remarks
 - Practical Tools for Running Python Software
-- Data Structures
-- Control Statements
-- Functions
+- Python Data Structures
+- Controlling Program Flow
+- Functions and Modules
 - Dependency Management and Environment Requirements
 </v-click>
 
@@ -28,7 +28,11 @@ layout: two-cols-header
 ### Day 2
 - Introduction to the Python Ecosystem of Libraries
 - Reading and Writing Data
+- Error Handling in Python
+- Introdution to generators and itertools
+- Basic Data Operations (Filtering)
 - Data Visualization
-- Introduction to numpy
-- Basics of Machine Learning
+- Introduction to numpy, skimage and scipy
+
+
 </v-click>
