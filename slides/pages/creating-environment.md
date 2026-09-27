@@ -33,15 +33,15 @@ Command Line
 
     Use a text editor to create a new Python script called hello.py with the following content.
     ```
-    # hello.py
-    print("Hello, World!")
+    # hbd.py
+    print("Happy birthday, Kaitlynn!")
     ```
 
 - **Step 4: Execute the Python Script.**  
 
     Run the script using the following command:
     ```
-    python hello.py
+    python hbd.py
     ```
 
 ---
