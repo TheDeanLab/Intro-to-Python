@@ -19,7 +19,7 @@ overviewSnapshots: true
 
 ---
 
-# Introduction to Python 2025
+# Introduction to Python 2026
 
 Lyda Hill Department of Bioinformatics
 
@@ -44,7 +44,7 @@ hide: true
 
 
 ---
-src: ./pages/creatiing-environments.md
+src: ./pages/creating-environment.md
 hide: false
 ---
 
