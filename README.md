@@ -9,7 +9,7 @@
 **Instructors:** Kevin Dean, Ph.D., Conor McFadden, Ph.D., Kaitlynn Gov  
 **Credit Hours:** 1  
 **Room:** ND11.218  
-**Class Size:** 40  
+**Class Size:** 30  
 
 -------------------------
 
