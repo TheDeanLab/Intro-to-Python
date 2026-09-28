@@ -2,8 +2,63 @@
 layout: center
 ---
 
-# Creating a Python Environment
+# Executing Python Software
+Command Line
 
+** **
+
+
+
+Using `python script.py` or running the Python interpreter directly from the terminal.
+
+- **Step 1: Open the Command Line.**
+    - Windows: Open Command Prompt (search for `cmd`or `Command Prompt`).
+    - macOS/Linux: Open Terminal.
+
+- **Step 2: Navigate to your Working Directory.** 
+
+    Use the `cd` command to navigate to the folder where you want to create and execute your Python script. 
+    ```
+    cd path/to/your/folder
+    ```
+
+---
+
+# Executing Python Software
+Command Line
+
+** **
+
+- **Step 3: Create a Simple Python Script.**  
+
+    Use a text editor to create a new Python script called hello.py with the following content.
+    ```
+    # hbd.py
+    print("Happy birthday, Kaitlynn!")
+    ```
+
+- **Step 4: Execute the Python Script.**  
+
+    Run the script using the following command:
+    ```
+    python hbd.py
+    ```
+
+---
+
+# Executing Python Software
+Command Line
+
+** **
+
+  - **Advantages:**
+    - Simple and quick for running standalone scripts.
+    - Great for automation and batch processing.
+    - Efficient for executing complete programs.
+  - **Disadvantages:**
+    - Limited debugging capabilities.
+    - No interactivity once the script is running.
+    - Less suitable for exploratory analysis or iterative development.
 ---
 
 # Creating a Python Environment
@@ -16,7 +71,7 @@ Why do we need environments?
 - Imagine you’re working on two projects:
   - One needs **Python 3.10** and **NumPy 1.20**
   - Another needs **Python 3.12** and **NumPy 2.0**
-- If everything installs in the same place… 🧨 they **clash**!
+- If everything installs in the same place… they **clash**!
 - Your computer won’t know which version to use.
 
 </v-clicks>
@@ -79,7 +134,7 @@ conda activate myenv
 </v-click>
 
 <v-click>
-✅ Now you have a clean space with just Python installed!
+Now you have a clean space with just Python installed!
 You can add packages later (e.g., conda install numpy).
 </v-click>
 

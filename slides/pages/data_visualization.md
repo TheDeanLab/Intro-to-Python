@@ -302,4 +302,4 @@ layout : center
 # Activity
 Visualize properties of patient dataset
 
-(go to Jupyter notebook in the GitHub : activity_python-data_visualization.ipynb)
+Open a new Spyder script, load a CSV file, create a scatter plot, and save the figure as a PNG file.

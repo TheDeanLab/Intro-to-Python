@@ -5,11 +5,11 @@
 -------------------------
 
 ## Course Information
-**Dates:** 10/21/2025 - 10/22/2025  
-**Instructors:** Kevin Dean, Ph.D., Sriya Veerapaneni, and Conor McFadden  
+**Dates:** 9/30/2026 - 10/01/2026 
+**Instructors:** Kevin Dean, Ph.D., Conor McFadden, Ph.D., Kaitlynn Gov  
 **Credit Hours:** 1  
 **Room:** ND11.218  
-**Class Size:** 40  
+**Class Size:** 30  
 
 -------------------------
 

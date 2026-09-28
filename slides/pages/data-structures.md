@@ -10,7 +10,6 @@ layout: center
 # Python Data Types
 How are types handled in python?
 ** **
-<br>
 
 - Compiled languages like Java, C/C++, etc. are <i>statically typed</i>, where types are determined at compile time. Python is **dynamically typed**: types are determined at runtime.
 
@@ -34,7 +33,7 @@ How are types handled in python?
 </v-click>
 <v-click>
 
-- Use the ```type()``` keyword to return the type:
+- Use the `type()` keyword to return the type:
 
 <table><tbody><tr>
 <td>
@@ -61,7 +60,7 @@ How are types handled in python?
 # Python Data Types
 How are types handled in python?
 ** **
-- Why is the type ```<class 'float'>``` and not just ```float```?
+- Why is the type `<class 'float'>` and not just `float`?
 
 <v-click>
     <p style="text-align: center"><b>
@@ -72,16 +71,16 @@ How are types handled in python?
 
 <v-click>
 
-- When we write ```x = 10```, python checks the type of the <b><span style="color:red">value</span></b> 10 and creates an instance of the ```int()``` class. 
+- When we write `x = 10`, python checks the type of the <b><span style="color:red">value</span></b> 10 and creates an instance of the `int()` class. 
 The <b><span style="color:green">variable x</span></b> is then assigned to that object. 
 </v-click>
 <v-click>
 
-- If we now write ```x = 11```, the object in memory representing "10" gets destroyed and a new ```int()``` is created somewhere else. <b>This is different from other languages.</b>
+- If we now write `x = 11`, the object in memory representing "10" gets destroyed and a new `int()` is created somewhere else. <b>This is different from other languages.</b>
 </v-click>
 <v-click>
 
-- This happens because the ```int``` types are <u><b>immutable</b></u>, meaning they <u>cannot be changed once created</u>.
+- This happens because the `int` types are <u><b>immutable</b></u>, meaning they <u>cannot be changed once created</u>.
 </v-click>
 
 ---

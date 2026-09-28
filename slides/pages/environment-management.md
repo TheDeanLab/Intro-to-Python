@@ -17,8 +17,7 @@ Creating Reproducible Development Environments
 
 ** **
 
-- An environment is like a tissue culture flask. 
-- It guarantees that the software in one project doesn't interfere with another. 
+- An environment guarantees that the software in one project doesn't interfere with another. 
 - This enables a stable and reproducible space for your code.
 
 ---
@@ -200,38 +199,50 @@ conda list
 
 ---
 
-# Adding your environment to a JupyterLab Notebook
+# Using your environment in Spyder
 
 1. **Activate Your Environment:**
-    - Open your terminal or command prompt and activate the environment you want to add to Jupyter:
+    - Open Anaconda Prompt or a terminal and activate the environment you want to use:
       ```bash
       conda activate environment_name
       ```
 
-2. **Install the `ipykernel` Package (if not already installed):**
-    - Ensure that `ipykernel` is installed in your environment so it can be used as a Jupyter kernel:
+2. **Start Spyder from that environment:**
+    - Launch Spyder while the environment is active:
       ```bash
-      pip install ipykernel
+      spyder
       ```
+
+3. **Verify the environment is active:**
+    - In the Spyder console, run:
+      ```python
+      import sys
+      print(sys.executable)
+      ```
+    - This should point to the Python executable inside your environment.
 
 ---
 
-# Adding your environment to a JupyterLab Notebook
+# Using your environment in Spyder
 
-1. **Add the Environment as a JupyterLab Kernel:**
-    - Use the following command to add your environment as a kernel in Jupyter:
-      ```bash
-      python -m ipykernel install --user --name environment_name --display-name "My Environment"
-      ```
-    - Replace `"environment_name"` with your environment’s name, and you can customize the display name shown in Jupyter (e.g., "My Environment").
+1. **Install required packages in the environment:**
+    ```bash
+    conda install numpy pandas matplotlib
+    ```
 
-2. **Verify in JupyterLab:**
-    - Open Jupyter Notebook or JupyterLab:
-      ```bash
-      jupyter notebook
-      ```
-    - In a new notebook, go to **Kernel > Change Kernel**, and you should see your environment.
+2. **Confirm the packages work in Spyder:**
+    ```python
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
 
+    print(np.__version__)
+    print(pd.__version__)
+    ```
+
+3. **Run scripts from the editor:**
+    - Save your file in Spyder and press **F5** to execute it.
+    - Use the Variable Explorer to inspect data frames, arrays, and plots.
 
 ---
 
@@ -240,15 +251,16 @@ Working with Environments
 ** **
 
 **Important:**
-- Do not mix package managers (e.g., conda and pip).
-- Be judicious and explicit with your dependencies.
+- Do not mix package managers (e.g., conda and pip) unless you know exactly why.
+- Keep dependencies explicit and reproducible.
+- Use the same environment for Spyder and your scripts whenever possible.
 
 ---
 layout: center
 ---
 
 # Activity
-Create a Python Environment and Install Packages
+Create a Python Environment and Run It in Spyder
 
 ---
 
