@@ -90,6 +90,10 @@ layout: center
 
 # Activity
 
-## Install Anaconda
+## Install Anaconda  or MiniForge (if you have a UTSW computer)
 
 www.anaconda.com/download/
+
+or
+
+https://conda-forge.org/download/
