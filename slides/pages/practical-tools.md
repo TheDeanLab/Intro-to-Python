@@ -76,4 +76,4 @@ Spyder IDE
   - **Resource-Intensive:** Requires more memory and CPU compared to simpler text editors or the command line.
   - **Not Ideal for Large Projects:** While great for small to medium scripts, Spyder might not be the best choice for managing large-scale software projects.
   - **Less Customizable:** Compared to IDEs like VS Code or PyCharm, Spyder is less customizable.
-
+<br>
