@@ -3,7 +3,119 @@ layout: center
 ---
 
 # Practical Tools for Running Python Software
-## Spyder is the recommended environment for this course
+## How we actually build and run Python code
+
+---
+
+# Executing Python Software
+Command Line
+
+** **
+
+Using `python script.py` or running the Python interpreter directly from the terminal.
+
+<v-click>
+
+- **Step 1: Navigate to your Working Directory.** 
+
+    Use the `cd` command to navigate to the folder where you want to create and execute your Python script. 
+    ```
+    cd path/to/your/folder
+    ```
+
+</v-click>
+
+---
+
+
+# Executing Python Software
+Command Line
+
+** **
+
+<v-click>
+
+- **Step 3: Create a Simple Python Script.**  
+
+    Use a text editor to create a new Python script called hello.py with the following content.
+    ```
+    # hbd.py
+    print("Happy birthday, Kaitlynn!")
+    ```
+
+</v-click>
+<v-click>
+
+- **Step 4: Execute the Python Script.**  
+
+    Run the script using the following command:
+    ```
+    python hbd.py
+    ```
+
+</v-click>
+
+---
+
+# Executing Python Software
+Command Line
+
+** **
+
+<v-click>
+  
+  - **Advantages:**
+    - Simple and quick for running standalone scripts.
+    - Great for automation and batch processing.
+    - Efficient for executing complete programs.
+
+</v-click>
+<v-click>
+<br>
+
+  - **Disadvantages:**
+    - Limited debugging capabilities.
+    - No interactivity once the script is running.
+    - Less suitable for exploratory analysis or iterative development.
+
+</v-click>
+
+---
+
+# Executing Python Software
+Interactive Python
+
+** **
+
+**Open your *Prompt* and enter: `python`**
+
+<v-click>
+
+You will see something like:
+
+```console
+Python 3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 01:56:49) [MSC v.1944 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+</v-click>
+<v-click>
+
+You can freely enter Python commands, and the session will remember what you enter:
+
+```console
+>>> x = 10
+>>> print(x)
+10
+>>> x -= 5
+>>> print(x)
+5
+```
+
+Enter `quit()` to stop.
+
+</v-click>
 
 ---
 
@@ -12,7 +124,16 @@ Setting up Spyder
 
 ** **
 
-This course uses Spyder because it is a clear, script-based Python environment that works well for beginners, students, and research workflows.
+<v-click>
+
+**Command line is fine for quick testing, but we need something better for full projects.**
+
+We need an ***Integrated Development Environment (IDE)***
+
+</v-click>
+<v-click>
+
+This course uses ***Spyder*** because it is a clear, script-based Python environment that works well for beginners, students, and research workflows.
 
 - Open Spyder from Anaconda Navigator or from the command line:
   ```bash
@@ -21,6 +142,8 @@ This course uses Spyder because it is a clear, script-based Python environment t
 - In Spyder, create a new file with **File > New File**.
 - Write Python code in the editor, then run it with **F5** or the Run button.
 - Results appear in the console, and variables can be inspected in the Variable Explorer.
+
+</v-click>
 
 ---
 
@@ -47,10 +170,15 @@ Why Spyder works well here
 
 ** **
 
+<v-click>
+
 - Beginner-friendly layout: editor, console, and variable explorer
 - Good for script-based learning
 - Easy to inspect variables while debugging
 - Works well for scientific Python, data analysis, and plotting
+
+</v-click>
+<v-click>
 
 The Spyder workflow
 
@@ -61,19 +189,39 @@ The Spyder workflow
 3. Run it with **F5**.
 4. Check the output in the console.
 5. Inspect variables in the Variable Explorer.
+
+</v-click>
+
+---
+layout: center
 ---
 
-# Practical Tools for Running Python Software
-Spyder IDE
+# Activity
+Get *Spyder* running
 
 ** **
 
-- **Advantages:**
-  - **Integrated Development Environment:** Includes an interactive Python console, variable explorer, and script editor in a single interface.
-  - **Built-in Visualization Tools:** Direct integration with popular libraries like Matplotlib, allowing real-time plotting and visualization.
-  - **Interactive Debugging:** Provides robust debugging tools, including breakpoints and stepping through code to help with troubleshooting.
-- **Disadvantages:**
-  - **Resource-Intensive:** Requires more memory and CPU compared to simpler text editors or the command line.
-  - **Not Ideal for Large Projects:** While great for small to medium scripts, Spyder might not be the best choice for managing large-scale software projects.
-  - **Less Customizable:** Compared to IDEs like VS Code or PyCharm, Spyder is less customizable.
-<br>
+**First thing's first: Let's use proper Environment Management. Make sure your conda env is active!**
+
+```console
+(base) C:\Users\conor>conda activate intro-to-python
+```
+
+** **
+
+**If using *Anaconda Distribution*, it is included.**
+
+**If using *Miniconda* or *Miniforge*, we need to install it...**
+
+```console
+(intro-to-python) C:\Users\conor> conda install spyder -y
+```
+
+** **
+
+**Run *Spyder***
+```console
+(intro-to-python) C:\Users\conor> spyder
+```
+
+*Side Note:* Spyder is a <u>package</u>! Written in python, for python. We will get to packages later on.
