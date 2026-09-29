@@ -119,23 +119,34 @@ Steps to create a basic environment
 - Open your terminal or command prompt and type the following
 
 <v-click>
-```bash
-conda create -n myenv python=3.12 -y
+
 ```
+conda create -n intro-to-python python=3.11
+```
+    
 </v-click>
 
 
 - Then activate you environment:
 
 <v-click>
-```bash
-conda activate myenv
+
 ```
+conda activate intro-to-python
+ ```
 </v-click>
 
 <v-click>
+
 Now you have a clean space with just Python installed!
-You can add packages later (e.g., conda install numpy).
-</v-click>
+You can now install the IDE and add packages (e.g., conda install numpy).
 
+```
+conda install spyder numpy pandas matplotlib scipy
+```
 
+and launch
+
+```
+spyder
+```
