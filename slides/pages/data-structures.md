@@ -835,3 +835,19 @@ layout: center
 
 # Activity
 Get practice storing and manipulating patient data in Python data structures.
+
+** **
+
+**Remember we are using JupyterLab!**
+
+Start up `jupyter lab` and navigate to the `.../Intro-to-Python/activities` folder:
+
+```console
+activity_python-data-structures.ipynb
+```
+
+Solutions:
+
+```console
+activity_python-data-structures-solutions.ipynb
+```
