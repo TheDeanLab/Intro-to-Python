@@ -119,8 +119,8 @@ Enter `quit()` to stop.
 
 ---
 
-# Practical Tools for Running Python Software
-Setting up Spyder
+# Using an Integrated Development Environment (IDE)
+Setting up *Spyder*
 
 ** **
 
@@ -147,7 +147,7 @@ This course uses ***Spyder*** because it is a clear, script-based Python environ
 
 ---
 
-# Practical Tools for Running Python Software
+# Using an Integrated Development Environment (IDE)
 Creating and running a script in Spyder
 
 ** **
@@ -165,7 +165,7 @@ print("Hello, World!")
 
 ---
 
-# Practical Tools for Running Python Software
+# Using an Integrated Development Environment (IDE)
 Why Spyder works well here
 
 ** **
@@ -225,3 +225,52 @@ Get *Spyder* running
 ```
 
 *Side Note:* Spyder is a <u>package</u>! Written in python, for python. We will get to packages later on.
+
+---
+
+# Using Jupyter
+JupyterLab for course `\activities\*.ipynb`
+
+** **
+<br>
+
+- **Jupyter** is a front-end which runs Interactive Python notebooks (**.ipynb**).
+
+- Run code in **blocks**, similar to Spyder: `#%%`
+
+- Both run IPython: variables are remembered, plotting is enabled
+
+- For *Activities*, we will use ***JupyterLab***: web-based Jupyter that runs in your browser.
+
+- `ipykernel` bridges *Jupyter* and *IPython* (just as with Spyder)
+
+---
+layout: center
+---
+
+# Activity
+Set up *JupyterLab* in your (base) conda environment. Follow these steps!
+
+** **
+
+1. Install JupyterLab in (base): *(skip this if you installed Anaconda Distribution, it's already there)*
+```console
+(intro-to-python) C:\Users\conor> conda deactivate
+(base) C:\Users\conor> conda install jupyterlab
+```
+
+2. Install `ipykernel` in your environment:
+```console
+(base) C:\Users\conor> conda activate intro-to-python
+(intro-to-python) C:\Users\conor> conda install ipykernel
+```
+
+3. Register your environment with Jupyter:
+```console
+(intro-to-python) C:\Users\conor> python -m ipykernel install --user --name=intro-to-python
+```
+4. Go back to (base) and run JupyterLab: (Your env should be available as a kernel!)
+```console
+(intro-to-python) C:\Users\conor> conda deactivate
+(base) C:\Users\conor> jupyter lab
+```
