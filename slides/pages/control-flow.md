@@ -419,3 +419,11 @@ layout: center
 
 # Activity
 Write a loop to parse patient metadata and extract desired information
+
+** **
+
+**We will use the [COVID-19 Chest X-Ray Dataset](https://github.com/ieee8023/covid-chestxray-dataset) on GitHub.**
+
+<img src="/images/covid-github-download.png" width=540>
+
+Download ZIP and unzip to `/datasets/covid-chestxray-dataset` provided folder.

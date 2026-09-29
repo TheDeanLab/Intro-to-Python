@@ -135,9 +135,13 @@ Numpydoc
 
 ** **
 
-- **What is Numpydoc?**
-  - Numpydoc is a docstring format used for documenting Python code, particularly in scientific computing and data science libraries.
-  - It’s widely used in projects like NumPy, SciPy, and other scientific Python packages.
+<v-click>
+
+- ***Numpydoc*** is a docstring format used for documenting Python code, particularly in scientific computing and data science libraries.
+- It’s widely used in projects like NumPy, SciPy, and other scientific Python packages.
+
+</v-click>
+<v-click>
 
 - **Structure of a Numpydoc Docstring:**
   - Numpydoc follows a specific structure with defined sections to make documentation clear and consistent.
@@ -147,37 +151,38 @@ Numpydoc
     - **Raises:** Lists exceptions that the function can raise.
     - **Examples:** Provides usage examples to demonstrate how the function is used.
 
+</v-click>
+
 ---
 
 # Documenting Your Functions
-Numpydoc
+Example of a *Numpydoc* Docstring
 
 ** **
 
-- **Example of a Numpydoc Docstring:**
-    ```python
-    def add_numbers(a, b):
-        """ Add two numbers.
+```python
+def add_numbers(a, b):
+    """ Add two numbers.
 
-        Parameters
-        ----------
-        a : int
-            The first number.
-        b : int
-            The second number.
+    Parameters
+    ----------
+    a : int
+        The first number.
+    b : int
+        The second number.
 
-        Returns
-        -------
-        int
-            The sum of the two numbers.
+    Returns
+    -------
+    int
+        The sum of the two numbers.
 
-        Examples
-        --------
-        >>> add_numbers(3, 4)
-        7
-        """
-        return a + b
-    ```
+    Examples
+    --------
+    >>> add_numbers(3, 4)
+    7
+    """
+    return a + b
+```
 
 --- 
 
@@ -199,16 +204,25 @@ Inline Type Hinting
 
 ** **
 
+<v-click>
+
 - **What is Inline Type Hinting?**
   - Inline type hinting allows you to specify the expected types of function arguments and return values directly in the function signature.
   - Introduced in Python 3.5, type hints improve code readability and help developers understand what types are expected.
   - Type hinting does not enforce type checking but provides a form of documentation for your code.
+
+</v-click>
+<v-click>
+<br>
 
 - **Example of a Function with Type Hinting:**
     ```python
     def add_numbers(a: int, b: int) -> int:
         return a + b
     ```
+
+</v-click>
+
 
 ---
 
@@ -263,11 +277,18 @@ Built-In Modules
     print(math.sqrt(16))  # Outputs: 4.0
     ```
 
+<v-click>
+<br>
+
 - **Selective Imports (`from module import`):**
     ```python
     from math import sqrt
     print(sqrt(16))  # Outputs: 4.0
     ```
+
+</v-click>
+<v-click>
+<br>
 
 - **Aliases (`import module as`):**
     ```python
@@ -275,8 +296,9 @@ Built-In Modules
     print(np.array([1, 2, 3]))
     ```
 
-
 Python allows flexible importing: full modules, specific parts, or using aliases for convenience.
+
+</v-click>
 
 ---
 
@@ -365,6 +387,8 @@ The Importance of `__init__.py`
 
 ** **
 
+<v-click>
+
 - **Basic Example of Package Structure:**
     ```
     my_package/
@@ -378,9 +402,14 @@ The Importance of `__init__.py`
       from my_package import module1
       ```
 
+</v-click>
+<v-click>
+
 `__init__.py` is be default empty, but can also be used to intialize package-level variables, import additional submodules, etc.
 
 `__init__.py` is essential for structuring Python packages, enabling module imports, and controlling package initialization behavior.
+
+</v-click>
 
 ---
 
@@ -393,11 +422,18 @@ Exploring Module Search Path (`sys.path`)
 - **How Python Finds Modules:**
   - Python searches for modules using the paths listed in `sys.path`.
 
+<v-click>
+<br>
+
 - **Checking `sys.path`:**
     ```python
     import sys
     print(sys.path)
     ```
+
+</v-click>
+<v-click>
+<br>
 
 - **Modifying `sys.path`:**
   - You can add directories to `sys.path` to include custom modules from other locations:
@@ -407,7 +443,7 @@ Exploring Module Search Path (`sys.path`)
 
 Python's module search path (`sys.path`) determines where Python looks for modules and can be modified to include custom directories.
 
-
+</v-click>
 
 ---
 
@@ -416,16 +452,27 @@ Third-Party Modules and PyPI
 
 ** **
 
+<v-click>
+<br>
+
 - **Installing Modules via `pip`:**
     - You can install external Python packages using `pip`:
       ```bash
       pip install requests
       ```
 
+</v-click>
+<v-click>
+<br>
+
 - **Popular Third-Party Libraries:**
     - `requests`: For making HTTP requests.
     - `numpy`: For numerical computing.
     - `pandas`: For data analysis.
+
+</v-click>
+<v-click>
+<br>
 
 - **PyPI (Python Package Index):**
     - PyPI is the repository for sharing and downloading Python packages.
@@ -433,7 +480,7 @@ Third-Party Modules and PyPI
 
 Third-party modules from PyPI extend Python’s functionality, providing solutions for many domains.
 
-
+</v-click>
 
 ---
 
@@ -442,13 +489,21 @@ Understanding `if __name__ == "__main__"`
 
 ** **
 
+<v-click>
+
 - **What is `__name__`?**
   - In Python, `__name__` is a special built-in variable that represents the name of the current module.
   - When a Python file is run directly, `__name__` is set to `"__main__"`. However, when a file is imported as a module, `__name__` is set to the module's name instead.
 
+</v-click>
+<v-click>
+<br>
+
 - **Why use `if __name__ == "__main__":`?**
   - This statement ensures that a block of code is only executed when the script is run directly, not when it’s imported as a module in another script.
   - It is commonly used to encapsulate the "entry point" of a Python script.
+
+</v-click>
 
 ---
 
@@ -467,6 +522,9 @@ Understanding `if __name__ == "__main__"`
         main()
     ```
 
+<v-click>
+<br>
+
 - **Behavior:**
   - **When run directly:** The `main()` function will execute.
   - **When imported by another file:** The `main()` function will not automatically execute. 
@@ -474,6 +532,7 @@ Understanding `if __name__ == "__main__"`
 
 It allows for reusable code by preventing specific parts of a script from running when the script is imported as a module elsewhere.
 
+</v-click>
 
 ---
 
