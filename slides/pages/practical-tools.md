@@ -3,16 +3,137 @@ layout: center
 ---
 
 # Practical Tools for Running Python Software
-## Spyder is the recommended environment for this course
+## How we actually build and run Python code
 
 ---
 
-# Practical Tools for Running Python Software
-Setting up Spyder
+# Executing Python Software
+Command Line
 
 ** **
 
-This course uses Spyder because it is a clear, script-based Python environment that works well for beginners, students, and research workflows.
+Using `python script.py` or running the Python interpreter directly from the terminal.
+
+<v-click>
+
+- **Step 1: Navigate to your Working Directory.** 
+
+    Use the `cd` command to navigate to the folder where you want to create and execute your Python script. 
+    ```
+    cd path/to/your/folder
+    ```
+
+</v-click>
+
+---
+
+
+# Executing Python Software
+Command Line
+
+** **
+
+<v-click>
+
+- **Step 3: Create a Simple Python Script.**  
+
+    Use a text editor to create a new Python script called hello.py with the following content.
+    ```
+    # hbd.py
+    print("Happy birthday, Kaitlynn!")
+    ```
+
+</v-click>
+<v-click>
+
+- **Step 4: Execute the Python Script.**  
+
+    Run the script using the following command:
+    ```
+    python hbd.py
+    ```
+
+</v-click>
+
+---
+
+# Executing Python Software
+Command Line
+
+** **
+
+<v-click>
+  
+  - **Advantages:**
+    - Simple and quick for running standalone scripts.
+    - Great for automation and batch processing.
+    - Efficient for executing complete programs.
+
+</v-click>
+<v-click>
+<br>
+
+  - **Disadvantages:**
+    - Limited debugging capabilities.
+    - No interactivity once the script is running.
+    - Less suitable for exploratory analysis or iterative development.
+
+</v-click>
+
+---
+
+# Executing Python Software
+Interactive Python
+
+** **
+
+**Open your *Prompt* and enter: `python`**
+
+<v-click>
+
+You will see something like:
+
+```bash
+Python 3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 01:56:49) [MSC v.1944 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+</v-click>
+<v-click>
+
+You can freely enter Python commands, and the session will remember what you enter:
+
+```bash
+>>> x = 10
+>>> print(x)
+10
+>>> x -= 5
+>>> print(x)
+5
+```
+
+Enter `quit()` to stop.
+
+</v-click>
+
+---
+
+# Using an Integrated Development Environment (IDE)
+Setting up *Spyder*
+
+** **
+
+<v-click>
+
+**Command line is fine for quick testing, but we need something better for full projects.**
+
+We need an ***Integrated Development Environment (IDE)***
+
+</v-click>
+<v-click>
+
+This course uses ***Spyder*** because it is a clear, script-based Python environment that works well for beginners, students, and research workflows.
 
 - Open Spyder from Anaconda Navigator or from the command line:
   ```bash
@@ -22,9 +143,11 @@ This course uses Spyder because it is a clear, script-based Python environment t
 - Write Python code in the editor, then run it with **F5** or the Run button.
 - Results appear in the console, and variables can be inspected in the Variable Explorer.
 
+</v-click>
+
 ---
 
-# Practical Tools for Running Python Software
+# Using an Integrated Development Environment (IDE)
 Creating and running a script in Spyder
 
 ** **
@@ -42,15 +165,20 @@ print("Hello, World!")
 
 ---
 
-# Practical Tools for Running Python Software
+# Using an Integrated Development Environment (IDE)
 Why Spyder works well here
 
 ** **
+
+<v-click>
 
 - Beginner-friendly layout: editor, console, and variable explorer
 - Good for script-based learning
 - Easy to inspect variables while debugging
 - Works well for scientific Python, data analysis, and plotting
+
+</v-click>
+<v-click>
 
 The Spyder workflow
 
@@ -61,19 +189,105 @@ The Spyder workflow
 3. Run it with **F5**.
 4. Check the output in the console.
 5. Inspect variables in the Variable Explorer.
+
+</v-click>
+
+---
+layout: center
 ---
 
-# Practical Tools for Running Python Software
-Spyder IDE
+# Activity
+Get *Spyder* running
 
 ** **
 
-- **Advantages:**
-  - **Integrated Development Environment:** Includes an interactive Python console, variable explorer, and script editor in a single interface.
-  - **Built-in Visualization Tools:** Direct integration with popular libraries like Matplotlib, allowing real-time plotting and visualization.
-  - **Interactive Debugging:** Provides robust debugging tools, including breakpoints and stepping through code to help with troubleshooting.
-- **Disadvantages:**
-  - **Resource-Intensive:** Requires more memory and CPU compared to simpler text editors or the command line.
-  - **Not Ideal for Large Projects:** While great for small to medium scripts, Spyder might not be the best choice for managing large-scale software projects.
-  - **Less Customizable:** Compared to IDEs like VS Code or PyCharm, Spyder is less customizable.
+**First thing's first: Let's use proper Environment Management. Make sure your conda env is active!**
 
+```bash
+(base) C:\Users\conor> conda activate intro-to-python
+```
+
+** **
+
+**If using *Anaconda Distribution*, it is included.**
+
+**If using *Miniconda* or *Miniforge*, we need to install it...**
+
+```bash
+(intro-to-python) C:\Users\conor> conda install spyder -y
+```
+
+** **
+
+**Run *Spyder***
+```bash
+(intro-to-python) C:\Users\conor> spyder
+```
+
+*Side Note:* Spyder is a <u>package</u>! Written in python, for python. We will get to packages later on.
+
+---
+
+# Using Jupyter
+JupyterLab for course `\activities\*.ipynb`
+
+** **
+<br>
+
+- **Jupyter** is a front-end which runs Interactive Python notebooks (**.ipynb**).
+
+- Run code in **blocks**, similar to Spyder: `#%%`
+
+- Both run IPython: variables are remembered, plotting is enabled
+
+- For *Activities*, we will use ***JupyterLab***: web-based Jupyter that runs in your browser.
+
+- `ipykernel` bridges *Jupyter* and *IPython* (just as with Spyder)
+
+---
+layout: center
+---
+
+# Activity
+Set up *JupyterLab* in your (base) conda environment. Follow these steps!
+
+** **
+
+<v-click>
+
+1. Install JupyterLab in (base): *(skip this if you installed Anaconda Distribution, it's already there)*
+```bash
+(intro-to-python) C:\Users\conor> conda deactivate
+(base) C:\Users\conor> conda install jupyterlab
+```
+
+</v-click>
+<v-click>
+<br>
+
+2. Install `ipykernel` in your environment:
+```bash
+(base) C:\Users\conor> conda activate intro-to-python
+(intro-to-python) C:\Users\conor> conda install ipykernel
+```
+
+</v-click>
+<v-click>
+<br>
+
+3. Register your environment with Jupyter:
+```bash
+(intro-to-python) C:\Users\conor> python -m ipykernel install --user --name=intro-to-python
+```
+
+</v-click>
+<v-click>
+<br>
+
+4. Go back to (base) and run JupyterLab: (Your env should be available as a kernel!)
+```bash
+(intro-to-python) C:\Users\conor> conda deactivate
+(base) C:\Users\conor> jupyter lab
+```
+
+</v-click>

@@ -92,4 +92,22 @@ layout: center
 
 ## Install Anaconda
 
-www.anaconda.com/download/
+[www.anaconda.com/download/](www.anaconda.com/download/)
+
+---
+layout: center
+---
+
+# Alternatives
+
+** **
+
+## [Miniconda](https://www.anaconda.com/docs/getting-started/concepts/anaconda-or-miniconda)
+#### Stripped-down version of Anaconda (900 MB vs 9.7 GB!)
+
+<br>
+
+## [Miniforge](https://conda-forge.org/download/)
+#### Open-source version which defaults to community-led `conda-forge` channel
+### ***UTSW licensing issues? Use this!***
+
