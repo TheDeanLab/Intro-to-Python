@@ -93,7 +93,7 @@ Interactive Python
 
 You will see something like:
 
-```console
+```bash
 Python 3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 01:56:49) [MSC v.1944 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
@@ -104,7 +104,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 You can freely enter Python commands, and the session will remember what you enter:
 
-```console
+```bash
 >>> x = 10
 >>> print(x)
 10
@@ -203,8 +203,8 @@ Get *Spyder* running
 
 **First thing's first: Let's use proper Environment Management. Make sure your conda env is active!**
 
-```console
-(base) C:\Users\conor>conda activate intro-to-python
+```bash
+(base) C:\Users\conor> conda activate intro-to-python
 ```
 
 ** **
@@ -213,14 +213,14 @@ Get *Spyder* running
 
 **If using *Miniconda* or *Miniforge*, we need to install it...**
 
-```console
+```bash
 (intro-to-python) C:\Users\conor> conda install spyder -y
 ```
 
 ** **
 
 **Run *Spyder***
-```console
+```bash
 (intro-to-python) C:\Users\conor> spyder
 ```
 
@@ -253,24 +253,41 @@ Set up *JupyterLab* in your (base) conda environment. Follow these steps!
 
 ** **
 
+<v-click>
+
 1. Install JupyterLab in (base): *(skip this if you installed Anaconda Distribution, it's already there)*
-```console
+```bash
 (intro-to-python) C:\Users\conor> conda deactivate
 (base) C:\Users\conor> conda install jupyterlab
 ```
 
+</v-click>
+<v-click>
+<br>
+
 2. Install `ipykernel` in your environment:
-```console
+```bash
 (base) C:\Users\conor> conda activate intro-to-python
 (intro-to-python) C:\Users\conor> conda install ipykernel
 ```
 
+</v-click>
+<v-click>
+<br>
+
 3. Register your environment with Jupyter:
-```console
+```bash
 (intro-to-python) C:\Users\conor> python -m ipykernel install --user --name=intro-to-python
 ```
+
+</v-click>
+<v-click>
+<br>
+
 4. Go back to (base) and run JupyterLab: (Your env should be available as a kernel!)
-```console
+```bash
 (intro-to-python) C:\Users\conor> conda deactivate
 (base) C:\Users\conor> jupyter lab
 ```
+
+</v-click>

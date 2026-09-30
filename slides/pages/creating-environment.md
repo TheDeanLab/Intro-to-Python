@@ -115,15 +115,15 @@ Let's create an environment for this Course!
 **Open *Anaconda Prompt* (or Terminal, etc):**
 
 Create the environment:
-```console
+```bash
 (base) C:\Users\conor> conda create -n intro-to-python python=3.11 -y
 ```
 Activate the environment:
-```console
+```bash
 (base) C:\Users\conor> conda activate intro-to-python
 ```
 Did it work?
-```console
+```bash
 (intro-to-python) C:\Users\conor> python --version
 Python 3.11.16
 ``` 
