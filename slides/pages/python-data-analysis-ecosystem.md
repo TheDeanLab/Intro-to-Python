@@ -72,7 +72,7 @@ These are the most foundational and 'robust' libraries. There is overlap in some
 
 <v-click>
 
-4. **Fundamental Image Processing**
+4. **Fundamental Tabular Processing**
 	- [**pandas**](https://pandas.pydata.org/docs/reference/index.html): Streamlines reading and writing of table formats e.g. .csv, .txt, .tsv, .xlsx. Brings R and SQL table manipulation routines like merge to python. 
 </v-click>
 
@@ -83,7 +83,7 @@ You will almost always use these !
 
 <v-click>
 
-5. **Fundamental Tabular Processing**
+5. **Fundamental Image Processing**
 	- [**scikit-image**](https://scikit-image.org/docs/stable/auto_examples/): Modern image file reading/writing, no support for video like .avi, .mp4, common image processing routines with example code. Includes biological examples.
 	- [**opencv**](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html): Industry-performant image processing developed in C, now made available for Python. Offers typically faster algorithms but documentation is difficult to understand, few examples, primarily for 2D and general computer vision.
 </v-click>
