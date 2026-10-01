@@ -378,3 +378,5 @@ layout : center
 Use libraries to do exploratory analysis of patient dataset
 
 Write a Spyder script that loads a CSV file, summarizes the data, and creates a simple plot using pandas and matplotlib.
+
+**We will use the [COVID-19 Chest X-Ray Dataset](https://github.com/ieee8023/covid-chestxray-dataset) on GitHub.**
